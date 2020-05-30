@@ -50,7 +50,7 @@ public class Main {
 			//CONF_FILE_URI = ClassLoader.getSystemResource("simulator.conf").toURI();
 			System.out.println(Block.class.getClassLoader().getResource("").toURI());
 			CONF_FILE_URI = Block.class.getClassLoader().getResource("simulator.conf").toURI();
-			OUT_FILE_URI = CONF_FILE_URI.resolve(new URI("../output/"));
+			OUT_FILE_URI = CONF_FILE_URI.resolve(new URI("./output/"));
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
 		}
