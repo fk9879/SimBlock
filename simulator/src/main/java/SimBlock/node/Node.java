@@ -121,6 +121,7 @@ public class Node {
 		}
 	}
 
+	//挖礦
 	public void minting(){
 		AbstractMintingTask task = this.consensusAlgo.minting();
 		this.mintingTask = task;

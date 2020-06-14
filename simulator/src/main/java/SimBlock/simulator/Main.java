@@ -45,6 +45,7 @@ public class Main {
 
 	public static URI CONF_FILE_URI;
 	public static URI OUT_FILE_URI;
+	//設置輸入及輸出文件參數
 	static {
 		try {
 			//CONF_FILE_URI = ClassLoader.getSystemResource("simulator.conf").toURI();
@@ -58,6 +59,7 @@ public class Main {
 
 	public static PrintWriter OUT_JSON_FILE;
 	public static PrintWriter STATIC_JSON_FILE;
+	//定義輸出文件
 	static {
 		try{
 			OUT_JSON_FILE = new PrintWriter(new BufferedWriter(new FileWriter(new File(OUT_FILE_URI.resolve("./output.json")))));
@@ -74,13 +76,20 @@ public class Main {
 		OUT_JSON_FILE.print("["); //start json format
 		OUT_JSON_FILE.flush();
 
+		//把NetworkConfiguration中定義的地區信息先輸出到json文件
 		printRegion();
 
+		//根據以下信息來構建區塊鏈節點網絡
+		// NetworkConfiguration地區劃分，
+		// NetworkConfiguration級別劃分，
+		// 算力，
+		// 網絡連接Table SimBlock.node.routingTable.BitcoinCoreTable，
+		// 算法 SimBlock.node.consensusAlgo.SampleProofOfStake
 		constructNetworkWithAllNode(NUM_OF_NODES);
 
 		int j=1;
 		while(getTask() != null){
-
+			//啟動所有的挖礦任務
 			if(getTask() instanceof AbstractMintingTask){
 				AbstractMintingTask task = (AbstractMintingTask) getTask();
 				if(task.getParent().getHeight() == j) j++;
@@ -90,7 +99,7 @@ public class Main {
 			runTask();
 		}
 
-
+		//打印所有的傳播信息
 		printAllPropagation();
 
 		System.out.println();
@@ -102,7 +111,7 @@ public class Main {
 			blocks.add(block);
 			block = block.getParent();
 		}
-
+		//整理所有Orphan節點信息
 		Set<Block> orphans = new HashSet<Block>();
 		int averageOrhansSize =0;
 		for(Node node :getSimulatedNodes()){
@@ -124,11 +133,12 @@ public class Main {
 			  return order;
 	        }
 	    });
+		//將Orphan節點信息在Systemout打印出來
 		for(Block orphan : orphans){
 			System.out.println(orphan+ ":" +orphan.getHeight());
 		}
 		System.out.println(averageOrhansSize);
-
+		//將節點信息打印到blockList.txt
 		try {
 			FileWriter fw = new FileWriter(new File(OUT_FILE_URI.resolve("./blockList.txt")), false);
             PrintWriter pw = new PrintWriter(new BufferedWriter(fw));
@@ -161,9 +171,9 @@ public class Main {
 	}
 
 
-	//TODO　以下の初期生成はシナリオを読み込むようにする予定
-	//ノードを参加させるタスクを作る(ノードの参加と，リンクの貼り始めるタスクは分ける)
-	//シナリオファイルで上の参加タスクをTimer入れていく．
+	//TODO　计划在下面加载初始生成的方案
+	//创建一个要加入节点的任务（将节点加入与开始链接的任务分开）
+	//在方案文件中，将上面的参与任务插入Timer中
 
 	public static ArrayList<Integer> makeRandomList(double[] distribution ,boolean facum){
 		ArrayList<Integer> list = new ArrayList<Integer>();
@@ -206,8 +216,9 @@ public class Main {
 		List<Integer> regionList  = makeRandomList(regionDistribution,false);
 		double[] degreeDistribution = getDegreeDistribution();
 		List<Integer> degreeList  = makeRandomList(degreeDistribution,true);
-		
+
 		for(int id = 1; id <= numNodes; id++){
+			//根據地區劃分，級別劃分，算力，網絡連接Table，算法來構建區塊鏈節點網絡
 			Node node = new Node(id,degreeList.get(id-1)+1,regionList.get(id-1), genMiningPower(),TABLE,ALGO);
 			addNode(node);
 
@@ -224,9 +235,10 @@ public class Main {
 		}
 
 		for(Node node: getSimulatedNodes()){
+			//初始化節點的Routing Table
 			node.joinNetwork();
 		}
-		
+		//獲得創世節點
 		getSimulatedNodes().get(0).genesisBlock();
 	}
 
