@@ -79,12 +79,29 @@ public class Main {
 		//把NetworkConfiguration中定義的地區信息先輸出到json文件
 		printRegion();
 
-		//根據以下信息來構建區塊鏈節點網絡
+		//根據以下信息來構建 SimulationCOnfiguration 裡面定義的 NUM_OF_NODES 個區塊鏈節點網絡
 		// NetworkConfiguration地區劃分，
 		// NetworkConfiguration級別劃分，
 		// 算力，
 		// 網絡連接Table SimBlock.node.routingTable.BitcoinCoreTable，
 		// 算法 SimBlock.node.consensusAlgo.SampleProofOfStake
+		// 1. 創建節點
+		// 2. 把節點加入網絡，加到節點List裡面去
+		// 3. 獲得創世區塊
+		// 	3.1. 根據不同共識協議，獲得創世區塊 Node.java  genesisBlock()
+		// 	3.2. 收到創世區塊 Node.java  receiveBlock()
+		//		3.2.1. 如果新區塊是有效的
+		//		3.2.2. 如果當前節點挖出自己的區塊，收到區塊與自己的區塊不能同時存在於區塊鏈，則將自己的區塊設為孤兒區塊
+		//		3.2.3. 把創世區塊加入區塊鏈 Node.java  receiveBlock()  addToChain()
+		//		3.2.4. 挖礦，將挖礦任務放入隊列中 Node.java  receiveBlock()  minting()
+		//		3.2.5. 把區塊八卦到臨近節點 Node.java  receiveBlock()  sendInv()
+		//  3.2. 收到新的區塊 Node.java  receiveBlock()
+		//		3.2.1. 如果新區塊是有效的
+		//		3.2.2. 如果當前節點挖出自己的區塊，收到區塊與自己的區塊不能同時存在於區塊鏈，則將自己的區塊設為孤兒區塊
+		//		3.2.3. 把創世區塊加入區塊鏈 Node.java  receiveBlock()  addToChain()
+		//		3.2.4. 挖礦，將挖礦任務放入隊列中 Node.java  receiveBlock()  minting()
+		//		3.2.5. 把區塊八卦到臨近節點 Node.java  receiveBlock()  sendInv()
+
 		constructNetworkWithAllNode(NUM_OF_NODES);
 
 		int j=1;
