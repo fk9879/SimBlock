@@ -98,12 +98,15 @@ public class Main {
 		//  3.2. 收到新的區塊 Node.java  receiveBlock()
 		//		3.2.1. 如果新區塊是有效的
 		//		3.2.2. 如果當前節點挖出自己的區塊，收到區塊與自己的區塊不能同時存在於區塊鏈，則將自己的區塊設為孤兒區塊
-		//		3.2.3. 把創世區塊加入區塊鏈 Node.java  receiveBlock()  addToChain()
+		//		3.2.3. 把區塊加入區塊鏈 Node.java  receiveBlock()  addToChain()
 		//		3.2.4. 挖礦，將挖礦任務放入隊列中 Node.java  receiveBlock()  minting()
 		//		3.2.5. 把區塊八卦到臨近節點 Node.java  receiveBlock()  sendInv()
 
 		constructNetworkWithAllNode(NUM_OF_NODES);
 
+		//	當創世區塊及八卦任務加入Task隊列並啟動任務運行後
+		//	不斷會有其他節點收到八卦信息，並啟動挖礦任務，並生成新節點，並啟動自己的八卦任務。
+		//	Task隊列的內容會不斷增加，整個區塊鏈網絡的活動就逐漸啟動了
 		int j=1;
 		while(getTask() != null){
 			//啟動所有的挖礦任務

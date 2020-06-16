@@ -3,9 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SimBlock.iml" filepath="$PROJECT_DIR$/SimBlock.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/simulator/simulator.iml" filepath="$PROJECT_DIR$/.idea/modules/simulator/simulator.iml" group="simulator" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/simulator/simulator_main.iml" filepath="$PROJECT_DIR$/.idea/modules/simulator/simulator_main.iml" group="simulator" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/simulator/simulator_test.iml" filepath="$PROJECT_DIR$/.idea/modules/simulator/simulator_test.iml" group="simulator" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/simulator/SimBlock.simulator.iml" filepath="$PROJECT_DIR$/.idea/modules/simulator/SimBlock.simulator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/simulator/SimBlock.simulator.main.iml" filepath="$PROJECT_DIR$/.idea/modules/simulator/SimBlock.simulator.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/simulator/SimBlock.simulator.test.iml" filepath="$PROJECT_DIR$/.idea/modules/simulator/SimBlock.simulator.test.iml" />
     </modules>
   </component>
 </project>
