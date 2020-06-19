@@ -116,6 +116,15 @@ public class Main {
 				if(j > ENDBLOCKHEIGHT){break;}
 				if(j%100==0 || j==2) writeGraph(j);
 			}
+			//如果是挖礦任務的話
+			// Timer.java 裡面的 runTask
+			// MiningTask.java 裡面的 New ProofOfWorkBlock()
+			// Node.java 裡面的 receiveBlock()
+			//		3.2.1. 如果新區塊是有效的
+			//		3.2.2. 如果當前節點挖出自己的區塊，收到區塊與自己的區塊不能同時存在於區塊鏈，則將自己的區塊設為孤兒區塊
+			//		3.2.3. 把區塊加入區塊鏈 Node.java  receiveBlock()  addToChain()
+			//		3.2.4. 挖礦，將挖礦任務放入隊列中 Node.java  receiveBlock()  minting()
+			//		3.2.5. 把區塊八卦到臨近節點 Node.java  receiveBlock()  sendInv()
 			runTask();
 		}
 

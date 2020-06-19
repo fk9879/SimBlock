@@ -19,7 +19,8 @@ public class SimulationConfiguration {
 	public static final int NUM_OF_NODES = 600;//600;//800;//6000;
 
 	public static final String TABLE = "SimBlock.node.routingTable.BitcoinCoreTable";
-	public static final String ALGO = "SimBlock.node.consensusAlgo.SampleProofOfStake";
+	//public static final String ALGO = "SimBlock.node.consensusAlgo.SampleProofOfStake";;
+	public static final String ALGO = "SimBlock.node.consensusAlgo.ProofOfWork";
 
 	// Unit: millisecond
 	public static final long INTERVAL = 1000*60*10;//1000*60;//1000*30*5;//1000*60*10;
