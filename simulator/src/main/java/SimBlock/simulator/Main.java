@@ -89,37 +89,34 @@ public class Main {
 		// 2. 把節點加入網絡，加到節點List裡面去
 		// 3. 獲得創世區塊
 		// 	3.1. 根據不同共識協議，獲得創世區塊 Node.java  genesisBlock()
+		//		3.1.1. 調用不同共識協議的創世區塊方法	consensusAlgo.genesisBlock()
+		//		3.1.2. Pow調用自己的創世區塊方法	ProofOfWorkBlock.genesisBlock()
 		// 	3.2. 收到創世區塊 Node.java  receiveBlock()
 		//		3.2.1. 如果新區塊是有效的
 		//		3.2.2. 如果當前節點挖出自己的區塊，收到區塊與自己的區塊不能同時存在於區塊鏈，則將自己的區塊設為孤兒區塊
 		//		3.2.3. 把創世區塊加入區塊鏈 Node.java  receiveBlock()  addToChain()
-		//		3.2.4. 挖礦，將挖礦任務放入隊列中 Node.java  receiveBlock()  minting()
-		//		3.2.5. 把區塊八卦到臨近節點 Node.java  receiveBlock()  sendInv()
-		//  3.2. 收到新的區塊 Node.java  receiveBlock()
-		//		3.2.1. 如果新區塊是有效的
-		//		3.2.2. 如果當前節點挖出自己的區塊，收到區塊與自己的區塊不能同時存在於區塊鏈，則將自己的區塊設為孤兒區塊
-		//		3.2.3. 把區塊加入區塊鏈 Node.java  receiveBlock()  addToChain()
-		//		3.2.4. 挖礦，將挖礦任務放入隊列中 Node.java  receiveBlock()  minting()
-		//		3.2.5. 把區塊八卦到臨近節點 Node.java  receiveBlock()  sendInv()
+		//		3.2.4. 挖礦，將挖礦任務放入隊列中 Node.java  receiveBlock()  minting()   增加一個挖礦任務, Interval 比較長
+		//		3.2.5. 把區塊八卦到臨近節點 Node.java  receiveBlock()  sendInv()  為每一個鄰居增加一個Message任務
 
 		constructNetworkWithAllNode(NUM_OF_NODES);
 
-		//	當創世區塊及八卦任務加入Task隊列並啟動任務運行後
-		//	不斷會有其他節點收到八卦信息，並啟動挖礦任務，並生成新節點，並啟動自己的八卦任務。
+		//	將創世區塊及八卦任務，加入Task隊列並啟動任務運行後 22 InvMessageTask & 1 MiningTask
+		//	不斷會有其他節點收到八卦信息，InvMessageTask，RecMessageTask，BlockMessageTask，如果收到了receiveMessage BlockMessageTask任務
+        //	並啟動挖礦任務，並生成新節點，並啟動自己的八卦任務。
 		//	Task隊列的內容會不斷增加，整個區塊鏈網絡的活動就逐漸啟動了
 		int j=1;
 		while(getTask() != null){
-			//啟動所有的挖礦任務
 			if(getTask() instanceof AbstractMintingTask){
+				//如果是挖礦任務的話
 				AbstractMintingTask task = (AbstractMintingTask) getTask();
 				if(task.getParent().getHeight() == j) j++;
 				if(j > ENDBLOCKHEIGHT){break;}
 				if(j%100==0 || j==2) writeGraph(j);
 			}
-			//如果是挖礦任務的話
-			// Timer.java 裡面的 runTask
-			// MiningTask.java 裡面的 New ProofOfWorkBlock()
-			// Node.java 裡面的 receiveBlock()
+			// main Mian() -> Timer runTask() -> AbstratMessageTask run() -> Node receiveMessage()
+			// receiveMeaage 中判斷 InvMessageTask、RecMessageTask、BlockMessageTask
+			// 其中，InvMessageTask 會增加 RecMessageTask; RecMessageTask -> sendNextBlockMessage() 會增加 BlockMessageTask
+			// BlockMessageTask 會 調用 receiveBlock()
 			//		3.2.1. 如果新區塊是有效的
 			//		3.2.2. 如果當前節點挖出自己的區塊，收到區塊與自己的區塊不能同時存在於區塊鏈，則將自己的區塊設為孤兒區塊
 			//		3.2.3. 把區塊加入區塊鏈 Node.java  receiveBlock()  addToChain()

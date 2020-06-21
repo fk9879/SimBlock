@@ -135,6 +135,11 @@ public class Node {
 		}
 	}
 
+	// 創世區塊： main -> constructNetworkWithAllNode -> genesisBlock -> receiveBlock -> sendInv
+	// 普通區塊：
+	//將收到的區塊加入區塊鏈
+	//並啟動挖礦操作
+	//向相鄰節點發出Inv
 	public void receiveBlock(Block block){
 		if(this.consensusAlgo.isReceivedBlockValid(block, this.block)){
 			if (this.block != null && !this.block.isOnSameChainAs(block)) {
