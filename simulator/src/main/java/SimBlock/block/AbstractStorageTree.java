@@ -1,12 +1,12 @@
 package SimBlock.block;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public abstract class AbstractStorageTree {
 
     // transaction List
-    List<String> txList;
+    List<Map<String, Object>> txList;
     // Merkle Root
     String root;
 
@@ -14,7 +14,7 @@ public abstract class AbstractStorageTree {
      * constructor
      * @param txList transaction List
      */
-    public AbstractStorageTree(List<String> txList) {
+    public AbstractStorageTree(List<Map<String, Object>> txList) {
         this.txList = txList;
         this.root = "";
     }

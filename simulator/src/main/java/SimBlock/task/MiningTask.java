@@ -17,12 +17,33 @@ package SimBlock.task;
 
 import SimBlock.block.ProofOfWorkBlock;
 import SimBlock.node.Node;
-import static SimBlock.simulator.Timer.*;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static SimBlock.simulator.Timer.getCurrentTime;
 
 public class MiningTask extends AbstractMintingTask {
 	private BigInteger difficulty;
+
+	//Vincent Start
+	public List<Map<String, Object>> currentTransactions;
+
+	public List<Map<String, Object>> getCurrentTransactions() {
+		return currentTransactions;
+	}
+
+	public void newTransactions(String sender, String recipient, long amount) {
+		Map<String, Object> transaction = new HashMap<String, Object>();
+		transaction.put("sender", sender);
+		transaction.put("recipient", recipient);
+		transaction.put("amount", amount);
+		getCurrentTransactions().add(transaction);
+	}
+	//Vincent Tail
 	
 	public MiningTask(Node minter, long interval, BigInteger difficulty) {
 		super(minter, interval);
@@ -31,6 +52,23 @@ public class MiningTask extends AbstractMintingTask {
 
 	@Override
 	public void run() {
+
+		currentTransactions = new ArrayList<Map<String, Object>>();
+
+		//Vincent Start
+		newTransactions("sender","receipient",100);
+
+		List<String> tempTxList = new ArrayList<String>();
+		tempTxList.add("a");
+		tempTxList.add("b");
+		tempTxList.add("c");
+		tempTxList.add("d");
+		tempTxList.add("e");
+		/*MerkleTrees merkleTrees = new MerkleTrees(tempTxList);
+		merkleTrees.constractTree();
+		System.out.println("root : " + merkleTrees.getRoot());*/
+		//Vincent Tail
+
 		ProofOfWorkBlock createdBlock = new ProofOfWorkBlock((ProofOfWorkBlock)this.getParent(), this.getMinter(), getCurrentTime(), this.difficulty);
 		this.getMinter().receiveBlock(createdBlock);
 	}
