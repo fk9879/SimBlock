@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import SimBlock.block.MerkleTrees;
 
 import static SimBlock.simulator.Timer.getCurrentTime;
 
@@ -64,9 +65,9 @@ public class MiningTask extends AbstractMintingTask {
 		tempTxList.add("c");
 		tempTxList.add("d");
 		tempTxList.add("e");
-		/*MerkleTrees merkleTrees = new MerkleTrees(tempTxList);
+		MerkleTrees merkleTrees = new MerkleTrees(currentTransactions);
 		merkleTrees.constractTree();
-		System.out.println("root : " + merkleTrees.getRoot());*/
+		System.out.println("root : " + merkleTrees.getRoot());
 		//Vincent Tail
 
 		ProofOfWorkBlock createdBlock = new ProofOfWorkBlock((ProofOfWorkBlock)this.getParent(), this.getMinter(), getCurrentTime(), this.difficulty);
