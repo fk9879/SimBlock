@@ -4,9 +4,9 @@ import java.util.List;
 import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Map;
-/*import net.sf.json.JSON;
+import net.sf.json.JSON;
 import net.sf.json.JSONObject;
-import net.sf.json.xml.XMLSerializer;*/
+import net.sf.json.xml.XMLSerializer;
 
 public class MerkleTrees extends AbstractStorageTree {
     /**
@@ -24,7 +24,7 @@ public class MerkleTrees extends AbstractStorageTree {
         List<String> tempTxList = new ArrayList<String>();
 
         for (int i = 0; i < this.txList.size(); i++) {
-            //tempTxList.add(new JSONObject(this.txList.get(i)).toString());
+            tempTxList.add(new JSONObject().fromObject(this.txList.get(i)).toString());
         }
 
         List<String> newTxList = getNewTxList(tempTxList);
