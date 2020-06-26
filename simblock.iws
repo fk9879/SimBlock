@@ -2,21 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97b2a154-2b20-4143-a242-e5365a84c6d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/simulator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/simulator/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/commons-beanutils-1.7.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/commons-collections-3.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/commons-lang-2.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/commons-logging-1.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ezmorph-1.0.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/json-lib-2.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simblock.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SimBlock.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simblock.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/simblock.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simblock.iws" beforeDir="false" afterPath="$PROJECT_DIR$/simblock.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/simblock.simulator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/SimBlock.simulator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/simblock.simulator.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/SimBlock.simulator.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/simblock.simulator.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/SimBlock.simulator.test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/MerkleTrees.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/MerkleTrees.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -62,6 +72,9 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+    <projectState path="$PROJECT_DIR$/simulator/src">
+      <ProjectState />
+    </projectState>
   </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
@@ -69,12 +82,26 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/simulator">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="simblock" type="f1a62948:ProjectNode" />
+                <item name="SimBlock" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="SimBlock" type="f1a62948:ProjectNode" />
+                <item name="simulator" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="SimBlock" type="f1a62948:ProjectNode" />
+                <item name="simulator" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
             </expand>
             <select />
@@ -89,9 +116,23 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="1.8" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ModuleEditorState">
     <option name="LAST_EDITED_MODULE_NAME" />
     <option name="LAST_EDITED_TAB_NAME" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="10" />
+    <option name="y" value="43" />
+    <option name="width" value="1260" />
+    <option name="height" value="737" />
   </component>
   <component name="ProjectId" id="1cXkR9aRhLARQdTeufKomrtoL2M" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -103,43 +144,36 @@
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/simulator/build/classes/java/main" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/simulator/build/classes/java/main" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
-    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
-      <Host>localhost</Host>
-      <Port>5050</Port>
-    </configuration>
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -147,9 +181,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SimBlock.simulator.Main" />
-      <module name="simblock.simulator.main" />
+      <module name="SimBlock.simulator.main" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -158,7 +196,6 @@
         </pattern>
       </extension>
       <method v="2">
-        <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
       </method>
     </configuration>
@@ -226,11 +263,24 @@
       <option name="presentableId" value="Default" />
       <updated>1590682316936</updated>
       <workItem from="1590682317402" duration="3040000" />
+      <workItem from="1593180818889" duration="718000" />
+      <workItem from="1593181559526" duration="328000" />
+      <workItem from="1593181909829" duration="267000" />
+      <workItem from="1593182206507" duration="72000" />
+      <workItem from="1593182298583" duration="928000" />
+      <workItem from="1593183371952" duration="172000" />
+      <workItem from="1593183665043" duration="820000" />
+      <workItem from="1593184515894" duration="1317000" />
+      <workItem from="1593186001027" duration="988000" />
+      <workItem from="1593187226458" duration="1034000" />
+      <workItem from="1593188742894" duration="1133000" />
+      <workItem from="1593189900841" duration="174000" />
+      <workItem from="1593190094189" duration="942000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -242,9 +292,91 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="104" y="62" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593186996789">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="104" y="62" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.800@0.0.1280.800" timestamp="1593186996789" />
+    <state x="377" y="197" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1593186992304">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="377" y="197" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1280.800@0.0.1280.800" timestamp="1593186992304" />
+    <state x="378" y="173" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1593184271993">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="378" y="173" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.23.1280.777/-1920.112.1920.1057@0.23.1280.777" timestamp="1593184271993" />
+    <state x="378" y="173" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.23.1280.777@0.23.1280.777" timestamp="1593183858439" />
+    <state width="1238" height="204" key="GridCell.Tab.0.bottom" timestamp="1593190746025">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1238" height="204" key="GridCell.Tab.0.bottom/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1593190746025" />
+    <state width="1238" height="204" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1593189134175" />
+    <state width="1238" height="190" key="GridCell.Tab.0.bottom/0.23.1280.777/-1920.112.1920.1057@0.23.1280.777" timestamp="1593184427030" />
+    <state width="1238" height="190" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1593183940437" />
+    <state width="1238" height="204" key="GridCell.Tab.0.center" timestamp="1593190746024">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1238" height="204" key="GridCell.Tab.0.center/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1593190746024" />
+    <state width="1238" height="204" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1593189134174" />
+    <state width="1238" height="190" key="GridCell.Tab.0.center/0.23.1280.777/-1920.112.1920.1057@0.23.1280.777" timestamp="1593184427029" />
+    <state width="1238" height="190" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1593183940435" />
+    <state width="1238" height="204" key="GridCell.Tab.0.left" timestamp="1593190746023">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1238" height="204" key="GridCell.Tab.0.left/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1593190746023" />
+    <state width="1238" height="204" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1593189134173" />
+    <state width="1238" height="190" key="GridCell.Tab.0.left/0.23.1280.777/-1920.112.1920.1057@0.23.1280.777" timestamp="1593184427029" />
+    <state width="1238" height="190" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1593183940435" />
+    <state width="1238" height="204" key="GridCell.Tab.0.right" timestamp="1593190746025">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1238" height="204" key="GridCell.Tab.0.right/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1593190746025" />
+    <state width="1238" height="204" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1593189134175" />
+    <state width="1238" height="190" key="GridCell.Tab.0.right/0.23.1280.777/-1920.112.1920.1057@0.23.1280.777" timestamp="1593184427030" />
+    <state width="1238" height="190" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1593183940436" />
+    <state width="1238" height="253" key="GridCell.Tab.1.bottom" timestamp="1593188517004">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1238" height="253" key="GridCell.Tab.1.bottom/0.0.1280.800@0.0.1280.800" timestamp="1593188517004" />
+    <state width="1238" height="253" key="GridCell.Tab.1.center" timestamp="1593188517003">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1238" height="253" key="GridCell.Tab.1.center/0.0.1280.800@0.0.1280.800" timestamp="1593188517003" />
+    <state width="1238" height="253" key="GridCell.Tab.1.left" timestamp="1593188517002">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1238" height="253" key="GridCell.Tab.1.left/0.0.1280.800@0.0.1280.800" timestamp="1593188517002" />
+    <state width="1238" height="253" key="GridCell.Tab.1.right" timestamp="1593188517003">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1238" height="253" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1593188517003" />
+    <state x="269" y="129" key="NewModule_or_Project.wizard" timestamp="1593188919120">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="269" y="129" key="NewModule_or_Project.wizard/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1593188919120" />
+    <state x="269" y="129" key="NewModule_or_Project.wizard/0.0.1280.800@0.0.1280.800" timestamp="1593187106170" />
+    <state x="128" y="23" width="1024" height="777" key="SettingsEditor" timestamp="1593190378293">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="128" y="23" width="1024" height="777" key="SettingsEditor/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1593190378293" />
+    <state x="128" y="23" width="1024" height="777" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1593189222305" />
+    <state x="128" y="23" key="SettingsEditor/0.23.1280.777/-1920.112.1920.1057@0.23.1280.777" timestamp="1593184404013" />
+    <state x="128" y="23" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1593183864432" />
+    <state x="352" y="297" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1593186421986">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="352" y="297" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1593185568004" />
+    <state x="352" y="297" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1280.800@0.0.1280.800" timestamp="1593186421986" />
+    <state x="352" y="311" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.23.1280.777/-1920.112.1920.1057@0.23.1280.777" timestamp="1593184394962" />
+    <state x="34" y="63" key="new project wizard" timestamp="1593186922176">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="34" y="63" key="new project wizard/0.0.1280.800@0.0.1280.800" timestamp="1593186922176" />
   </component>
 </project>

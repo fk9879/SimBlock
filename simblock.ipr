@@ -11,17 +11,17 @@
       <entry name="!?*.groovy" />
       <entry name="!?*.java" />
     </wildcardResourcePatterns>
-    <bytecodeTargetLevel target="1.8">
-      <module name="simblock.simulator.main" target="1.8" />
-      <module name="simblock.simulator.test" target="1.8" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8" />
   </component>
-  <component name="CopyrightManager" default="">
-    <module2copyright />
-  </component>
+  <component name="CopyrightManager" default="" />
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$" />
+  </component>
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -32,6 +32,17 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/simulator" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/simulator/src" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../gradle-5.6.2" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/simulator/src" />
           </set>
         </option>
         <option name="useQualifiedModuleNames" value="true" />
@@ -52,39 +63,76 @@
     <version value="1.0" />
   </component>
   <component name="JavadocGenerationManager">
-    <option name="OUTPUT_DIRECTORY" />
-    <option name="OPTION_SCOPE" value="protected" />
-    <option name="OPTION_HIERARCHY" value="true" />
-    <option name="OPTION_NAVIGATOR" value="true" />
-    <option name="OPTION_INDEX" value="true" />
-    <option name="OPTION_SEPARATE_INDEX" value="true" />
-    <option name="OPTION_DOCUMENT_TAG_USE" value="false" />
-    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="false" />
-    <option name="OPTION_DOCUMENT_TAG_VERSION" value="false" />
-    <option name="OPTION_DOCUMENT_TAG_DEPRECATED" value="true" />
-    <option name="OPTION_DEPRECATED_LIST" value="true" />
     <option name="OTHER_OPTIONS" value="" />
-    <option name="HEAP_SIZE" />
-    <option name="LOCALE" />
-    <option name="OPEN_IN_BROWSER" value="true" />
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/simblock.iml" filepath="$PROJECT_DIR$/simblock.iml" />
-      <module fileurl="file://$PROJECT_DIR$/simulator/simblock.simulator.iml" filepath="$PROJECT_DIR$/simulator/simblock.simulator.iml" />
-      <module fileurl="file://$PROJECT_DIR$/simulator/simblock.simulator.main.iml" filepath="$PROJECT_DIR$/simulator/simblock.simulator.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/simulator/simblock.simulator.test.iml" filepath="$PROJECT_DIR$/simulator/simblock.simulator.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/simulator/simulator.iml" filepath="$PROJECT_DIR$/simulator/simulator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SimBlock.iml" filepath="$PROJECT_DIR$/SimBlock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simulator/SimBlock.simulator.iml" filepath="$PROJECT_DIR$/simulator/SimBlock.simulator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simulator/SimBlock.simulator.main.iml" filepath="$PROJECT_DIR$/simulator/SimBlock.simulator.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simulator/SimBlock.simulator.test.iml" filepath="$PROJECT_DIR$/simulator/SimBlock.simulator.test.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="MavenRepo" />
+      <option name="name" value="MavenRepo" />
+      <option name="url" value="https://repo1.maven.org/maven2/" />
+    </remote-repository>
+  </component>
+  <component name="RunConfigurationProducerService">
+    <option name="ignoredProducers">
+      <set>
+        <option value="org.jetbrains.plugins.gradle.execution.test.runner.AllInPackageGradleConfigurationProducer" />
+        <option value="org.jetbrains.plugins.gradle.execution.test.runner.TestClassGradleConfigurationProducer" />
+        <option value="org.jetbrains.plugins.gradle.execution.test.runner.TestMethodGradleConfigurationProducer" />
+      </set>
+    </option>
   </component>
   <component name="SvnBranchConfigurationManager">
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+  </component>
+  <component name="libraryTable">
+    <library name="com.alibaba:fastjson:1.2.17" type="repository">
+      <properties maven-id="com.alibaba:fastjson:1.2.17" />
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/fastjson-1.2.17.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="fastjson-1.2.17">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/fastjson-1.2.17.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Gradle: com.alibaba:fastjson:1.2.70">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.alibaba/fastjson/1.2.70/77e20a36181005ad6d838254d52b3fa949e95dfe/fastjson-1.2.70.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.alibaba/fastjson/1.2.70/8103120406c48c80518eeb5a4ce4e4819e1a0281/fastjson-1.2.70-sources.jar!/" />
+      </SOURCES>
+    </library>
   </component>
   <component name="masterDetails">
     <states>

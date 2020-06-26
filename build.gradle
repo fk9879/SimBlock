@@ -65,6 +65,13 @@ subprojects {
             unixScriptFile.text = unixScriptFile.text.replace('$APP_HOME/lib/conf', '$APP_HOME/conf')
         }
     }
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        implementation 'com.alibaba:fastjson:1.2.70'
+    }
 }
 
 allprojects {
