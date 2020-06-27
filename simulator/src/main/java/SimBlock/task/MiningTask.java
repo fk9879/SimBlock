@@ -16,6 +16,7 @@
 package SimBlock.task;
 
 import SimBlock.block.ProofOfWorkBlock;
+import SimBlock.data.GolbalTrxPool;
 import SimBlock.node.Node;
 
 import java.math.BigInteger;
@@ -37,15 +38,22 @@ public class MiningTask extends AbstractMintingTask {
 	@Override
 	public void run() {
 
-		ArrayList TrxList = new ArrayList<Map<String, Object>>();
-		new readCSV().readFile("ICBC20141201.csv",TrxList);
-
+		//Vincent
+		//根據全局交易池，選擇需要的交易
+		ArrayList TrxList = TrxSelection(GolbalTrxPool.TrxPool);
+		//生成梅克爾二叉樹
 		MerkleTrees merkleTrees = new MerkleTrees(TrxList);
 		merkleTrees.constractTree();
+		//打印根節點哈希值
 		System.out.println("root : " + merkleTrees.getRoot());
-		//Vincent Tail
 
 		ProofOfWorkBlock createdBlock = new ProofOfWorkBlock((ProofOfWorkBlock)this.getParent(), this.getMinter(), getCurrentTime(), this.difficulty);
 		this.getMinter().receiveBlock(createdBlock);
+	}
+
+	//Vincent
+	//從全局交易池中選擇需要的交易
+	public ArrayList TrxSelection(ArrayList TrxPool){
+		return TrxPool;
 	}
 }

@@ -27,15 +27,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 import SimBlock.block.Block;
+import SimBlock.data.GolbalTrxPool;
+import SimBlock.data.readCSV;
 import SimBlock.node.Node;
 import SimBlock.task.AbstractMintingTask;
 
@@ -75,6 +71,10 @@ public class Main {
 
 		OUT_JSON_FILE.print("["); //start json format
 		OUT_JSON_FILE.flush();
+
+		//Vincent
+		//從CSV文件中讀取全部的交易數據
+		new readCSV().readFile("ICBC20141201.csv", GolbalTrxPool.TrxPool);
 
 		//把NetworkConfiguration中定義的地區信息先輸出到json文件
 		printRegion();
