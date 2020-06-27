@@ -19,32 +19,15 @@ import SimBlock.block.ProofOfWorkBlock;
 import SimBlock.node.Node;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
 import SimBlock.block.MerkleTrees;
+import SimBlock.data.readCSV;
 
 import static SimBlock.simulator.Timer.getCurrentTime;
 
 public class MiningTask extends AbstractMintingTask {
 	private BigInteger difficulty;
-
-	//Vincent Start
-	public List<Map<String, Object>> currentTransactions;
-
-	public List<Map<String, Object>> getCurrentTransactions() {
-		return currentTransactions;
-	}
-
-	public void newTransactions(String sender, String recipient, long amount) {
-		Map<String, Object> transaction = new HashMap<String, Object>();
-		transaction.put("sender", sender);
-		transaction.put("recipient", recipient);
-		transaction.put("amount", amount);
-		getCurrentTransactions().add(transaction);
-	}
-	//Vincent Tail
 	
 	public MiningTask(Node minter, long interval, BigInteger difficulty) {
 		super(minter, interval);
@@ -54,18 +37,10 @@ public class MiningTask extends AbstractMintingTask {
 	@Override
 	public void run() {
 
-		currentTransactions = new ArrayList<Map<String, Object>>();
+		ArrayList TrxList = new ArrayList<Map<String, Object>>();
+		new readCSV().readFile("ICBC20141201.csv",TrxList);
 
-		//Vincent Start
-		newTransactions("sender","receipient",100);
-
-		List<String> tempTxList = new ArrayList<String>();
-		tempTxList.add("a");
-		tempTxList.add("b");
-		tempTxList.add("c");
-		tempTxList.add("d");
-		tempTxList.add("e");
-		MerkleTrees merkleTrees = new MerkleTrees(currentTransactions);
+		MerkleTrees merkleTrees = new MerkleTrees(TrxList);
 		merkleTrees.constractTree();
 		System.out.println("root : " + merkleTrees.getRoot());
 		//Vincent Tail
