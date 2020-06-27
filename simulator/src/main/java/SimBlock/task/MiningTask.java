@@ -24,6 +24,7 @@ import java.util.*;
 
 import SimBlock.block.MerkleTrees;
 import SimBlock.data.readCSV;
+import com.alibaba.fastjson.JSONObject;
 
 import static SimBlock.simulator.Timer.getCurrentTime;
 
@@ -53,7 +54,19 @@ public class MiningTask extends AbstractMintingTask {
 
 	//Vincent
 	//從全局交易池中選擇需要的交易
-	public ArrayList TrxSelection(ArrayList TrxPool){
+	public ArrayList TrxSelection(ArrayList<Map<String, Object>> TrxPool){
+
+	    ArrayList<Map<String, Object>> selectedTrxList = new ArrayList<Map<String, Object>>();
+	    Double trxFee = 0.02;
+
+        for (int i = 0; i < TrxPool.size(); i++) {
+            Map<String, Object> transaction = TrxPool.get(i);
+            Double price = Double.parseDouble(transaction.get("Price").toString());
+            Double quantity = Double.parseDouble(transaction.get("Quantity").toString());
+
+            transaction.put("TransactionFee", price * quantity * trxFee);
+            selectedTrxList.add(transaction);
+        }
 		return TrxPool;
 	}
 }
