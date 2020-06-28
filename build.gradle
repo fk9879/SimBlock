@@ -8,6 +8,10 @@ def srcDir = 'src/main/java'
 def confDir = 'src/dist/conf'
 def outDir = 'build/classes/java/main'
 
+idea.module {
+    inheritOutputDirs = true
+}
+
 subprojects {
     apply plugin: 'java'
     apply plugin: 'application'
@@ -19,7 +23,7 @@ subprojects {
     idea.module {
         sourceDirs += file(srcDir)
         outputDir = file(outDir)
-        inheritOutputDirs = false
+        inheritOutputDirs = true
         iml {
             whenMerged  { module ->
                 module.getDependencies().add(new ModuleLibrary([new Path('file://$MODULE_DIR$/'+confDir)] as Set, [] as Set, [] as Set, [] as Set, null))
@@ -71,6 +75,8 @@ subprojects {
     }
     dependencies {
         implementation 'com.alibaba:fastjson:1.2.70'
+        implementation 'org.apache.commons:commons-math3:3.6.1'
+        implementation 'org.jfree:jfreechart:1.5.0'
     }
 }
 

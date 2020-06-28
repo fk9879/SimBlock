@@ -37,5 +37,15 @@ public class SimulationConfiguration {
 	public static final int ENDBLOCKHEIGHT = 100;
 
 	// Unit: byte
-	public static final long BLOCKSIZE = 535000;//6110;//8000;//535000;//0.5MB
+	public static final long BLOCKSIZE = 6110;//6110;//8000;//535000;//0.5MB
+
+	//Vincent
+	// Unit: byte
+	public static final long TRANSACTIONSIZE = 250;
+	// Unit: 100 percentage
+	public static final double TRANSACTIONFEEPCT = 0.02;
+	// Log Normal Distribution Scale
+	public static final int SCALE = 5;
+	// Log Normal Distribution Shape
+	public static final int SHAPE = 1;
 }
