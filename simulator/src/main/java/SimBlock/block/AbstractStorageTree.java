@@ -21,7 +21,7 @@ public abstract class AbstractStorageTree {
 
     public abstract void constractTree();
 
-    public abstract List<String> getNewTxList(List<String> tempTxList);
+    public abstract List<String> getNewTxList(List<String> tempTxList, int level);
 
     public abstract String getProofValue(String str);
 

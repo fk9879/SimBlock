@@ -79,9 +79,14 @@ public class MiningTask extends AbstractMintingTask {
 			transaction.put("TransactionFee", trxFee);
 			//根據交易手續費計算應該佔用的空間係數
 			LogNormalDistribution LND = new LogNormalDistribution(SCALE,SHAPE);
-			int spaceFactor = new Double(LND.cumulativeProbability(trxFee)).intValue();
+			//根據Cumulative Probability計算出來的結果向上取整，即0.1=1
+			int spaceFactor = new Double(Math.ceil(LND.cumulativeProbability(trxFee)*5)).intValue();
 			//記錄通過LogNormalDistrbution計算出的交易佔用空間
 			transaction.put("SpaceFactor", spaceFactor);
+			//如果當前這筆交易不夠放到當前區塊中，選擇下一筆交易
+			if(spaceFactor > count) {
+				continue;
+			}
 			//將交易加入輸出List
 			selectedTrxList.add(transaction);
 			//將交易從交易池去掉
