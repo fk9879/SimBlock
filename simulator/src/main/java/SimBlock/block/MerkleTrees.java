@@ -7,11 +7,12 @@ import com.alibaba.fastjson.JSONObject;
 
 import java.security.MessageDigest;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class MerkleTrees extends AbstractStorageTree {
-    public Map<String, Object> merkleTree = null;
+    public Map<String, Object> merkleTree = new HashMap<>();
     /**
      * constructor
      *
@@ -27,7 +28,9 @@ public class MerkleTrees extends AbstractStorageTree {
         List<String> tempTxList = new ArrayList<String>();
 
         for (int i = 0; i < this.txList.size(); i++) {
-            tempTxList.add(new JSONObject().toJSONString(this.txList.get(i)));
+            for (int j =0; j < Integer.parseInt(this.txList.get(i).get("SpaceFactor").toString()); j++) {
+                tempTxList.add(new JSONObject().toJSONString(this.txList.get(i)));
+            }
         }
 
         //Vincent
@@ -50,8 +53,7 @@ public class MerkleTrees extends AbstractStorageTree {
         int index = 0;
         while (index < tempTxList.size()) {
             //Vincent
-            Map<String, Object> leaf = null;
-            Map<String, Object> node = null;
+            Map<String, Object> leaf = new HashMap<>();
             // left
             String left = tempTxList.get(index);
             index++;
