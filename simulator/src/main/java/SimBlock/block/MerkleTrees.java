@@ -39,7 +39,7 @@ public class MerkleTrees extends AbstractStorageTree {
 
         //执行循环，直到只剩下一个hash值
         while (newTxList.size() != 1) {
-            level = level ++;
+            level++;
             newTxList = getNewTxList(newTxList,level);
         }
 
@@ -63,7 +63,7 @@ public class MerkleTrees extends AbstractStorageTree {
                 right = tempTxList.get(index);
             }
             // sha2 hex value
-            String sha2HexValue = getProofValue(left + right);
+            String sha2HexValue = getProofValue(left + right + index);
 
             //Vincent
             //Leaf 節點保存交易信息
@@ -73,29 +73,29 @@ public class MerkleTrees extends AbstractStorageTree {
                 leaf.put("level", level);
                 leaf.put("type", "leaf");
                 merkleTree.put(sha2HexValue, leaf);
-            }
-            //Node 節點保存Hash信息
-            if(level > 0) {
-                leaf.put("left", left);
-                leaf.put("right", right);
-                leaf.put("level", level);
-                leaf.put("type", "node");
-                ((Map<String,Object>)merkleTree.get(left)).put("parent",sha2HexValue);
-                merkleTree.put(sha2HexValue, leaf);
-            }
-            //Root 節點保存Hash信息
-            if(level == 4) {
-                leaf.put("type", "root");
-                leaf.put("level", level);
-                leaf.put("left", left);
-                leaf.put("right", right);
-                leaf.put("parent", "root");
-                ((Map<String,Object>)merkleTree.get(left)).put("parent",sha2HexValue);
-                merkleTree.put(sha2HexValue, leaf);
-                merkleTree.put("root", sha2HexValue);
-                merkleTree.put("hashalgo", "sha256");
-                merkleTree.put("leaves", "24");
-                merkleTree.put("levels", "4");
+            }else{
+                if(tempTxList.size() == 2) {
+                    //Root 節點保存Hash信息
+                    leaf.put("type", "root");
+                    leaf.put("level", level);
+                    leaf.put("left", left);
+                    leaf.put("right", right);
+                    leaf.put("parent", "root");
+                    ((Map<String,Object>)merkleTree.get(left)).put("parent",sha2HexValue);
+                    merkleTree.put(sha2HexValue, leaf);
+                    merkleTree.put("root", sha2HexValue);
+                    merkleTree.put("hashalgo", "sha256");
+                    merkleTree.put("leaves", "24");
+                    merkleTree.put("levels", "4");
+                }else{
+                    //Node 節點保存Hash信息
+                    leaf.put("left", left);
+                    leaf.put("right", right);
+                    leaf.put("level", level);
+                    leaf.put("type", "node");
+                    ((Map<String,Object>)merkleTree.get(left)).put("parent",sha2HexValue);
+                    merkleTree.put(sha2HexValue, leaf);
+                }
             }
 
             newTxList.add(sha2HexValue);
