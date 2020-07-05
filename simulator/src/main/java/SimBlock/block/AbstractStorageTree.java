@@ -27,4 +27,6 @@ public abstract class AbstractStorageTree {
 
     public abstract String getRoot();
 
+    public abstract Map<String, Object> getData();
+
 }

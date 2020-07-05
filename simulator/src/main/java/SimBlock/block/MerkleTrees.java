@@ -129,4 +129,9 @@ public class MerkleTrees extends AbstractStorageTree {
         return this.root;
     }
 
+    @Override
+    public Map<String, Object> getData() {
+        return this.merkleTree;
+    }
+
 }

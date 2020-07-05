@@ -23,9 +23,11 @@ import static SimBlock.simulator.Timer.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import SimBlock.block.Block;
+import SimBlock.block.MerkleTrees;
 import SimBlock.node.consensusAlgo.AbstractConsensusAlgo;
 import SimBlock.node.routingTable.AbstractRoutingTable;
 import SimBlock.task.AbstractMessageTask;
@@ -33,6 +35,8 @@ import SimBlock.task.BlockMessageTask;
 import SimBlock.task.InvMessageTask;
 import SimBlock.task.RecMessageTask;
 import SimBlock.task.AbstractMintingTask;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 
 public class Node {
 	private int nodeID;
@@ -105,6 +109,20 @@ public class Node {
 		OUT_JSON_FILE.print(	"}");
 		OUT_JSON_FILE.print("},");
 		OUT_JSON_FILE.flush();
+
+		//Vincent
+		Map<String, Object> datalist = ((MerkleTrees)newBlock.getData()).getData();
+		for(Map.Entry<String, Object> entry: datalist.entrySet()){
+			JSONObject jsonObject = JSONObject.parseObject(JSON.toJSONString(entry));
+			String valueString = jsonObject.get(entry.getKey()).toString();
+			if(valueString.contains("leaf")){
+				JSONObject innerJson = JSONObject.parseObject(jsonObject.get(entry.getKey()).toString());
+				JSONObject leftTrx = JSONObject.parseObject(innerJson.get("left").toString());
+				JSONObject rightTrx = JSONObject.parseObject(innerJson.get("right").toString());
+				OUT_CSV_FILE.println(this.getNodeID()+","+newBlock.getId() +","+leftTrx.get("TradeID")+","+rightTrx.get("TradeID")+","+getCurrentTime());
+			}
+		}
+		OUT_CSV_FILE.flush();
 	}
 
 	public void addOrphans(Block orphanBlock, Block validBlock){

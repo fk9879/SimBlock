@@ -16,7 +16,12 @@
 package SimBlock.block;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
+
+import SimBlock.data.GolbalTrxPool;
 import SimBlock.node.Node;
+import SimBlock.task.MiningTask;
+
 import static SimBlock.simulator.Simulator.*;
 
 
@@ -26,8 +31,8 @@ public class ProofOfWorkBlock extends Block {
 	private BigInteger nextDifficulty;
 	private static BigInteger genesisNextDifficulty;
 
-	public ProofOfWorkBlock(ProofOfWorkBlock parent, Node minter, long time, BigInteger difficulty) {
-		super(parent, minter, time);
+	public ProofOfWorkBlock(ProofOfWorkBlock parent, Node minter, long time, BigInteger difficulty, MerkleTrees merkleTrees) {
+		super(parent, minter, time, merkleTrees);
 		this.difficulty = difficulty;
 		this.totalDifficulty = (parent == null ? BigInteger.ZERO : parent.getTotalDifficulty()).add(difficulty);
 		this.nextDifficulty = (parent == null ? ProofOfWorkBlock.genesisNextDifficulty : parent.getNextDifficulty()); // TODO: difficulty adjustment
@@ -42,7 +47,14 @@ public class ProofOfWorkBlock extends Block {
 		for(Node node : getSimulatedNodes()){
 			totalMiningPower += node.getMiningPower();
 		}
+		//Vincent
+		//根據全局交易池，選擇需要的交易
+		ArrayList TrxList = MiningTask.TrxSelection(GolbalTrxPool.TrxPool);
+		//生成梅克爾二叉樹
+		MerkleTrees merkleTrees = new MerkleTrees(TrxList);
+		merkleTrees.constractTree();
+
 		genesisNextDifficulty = BigInteger.valueOf(totalMiningPower * getTargetInterval());
-		return new ProofOfWorkBlock(null, minter, 0, BigInteger.ZERO);
+		return new ProofOfWorkBlock(null, minter, 0, BigInteger.ZERO,merkleTrees);
 	}
 }

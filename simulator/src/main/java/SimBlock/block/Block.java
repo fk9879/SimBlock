@@ -24,13 +24,15 @@ public class Block {
 	private long time;
 	private int id;
 	private static int latestId = 0;
+	private Object data;
 
-	public Block(Block parent, Node minter, long time){
+	public Block(Block parent, Node minter, long time, Object data){
 		this.height = parent == null ? 0 : parent.getHeight() + 1;
 		this.parent = parent;
 		this.minter = minter;
 		this.time = time;
 		this.id = latestId;
+		this.data = data;
 		latestId++;
 	}
 
@@ -39,9 +41,10 @@ public class Block {
 	public Node getMinter(){return this.minter;}
 	public long getTime(){return this.time;}
 	public int getId() {return this.id;}
+	public Object getData() {return this.data;}
 
 	public static Block genesisBlock(Node minter) {
-		return new Block(null, minter, 0);
+		return new Block(null, minter, 0, null);
 	}
 
 	// return ancestor block that height is {height}

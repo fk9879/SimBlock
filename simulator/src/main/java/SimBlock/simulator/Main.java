@@ -55,11 +55,14 @@ public class Main {
 
 	public static PrintWriter OUT_JSON_FILE;
 	public static PrintWriter STATIC_JSON_FILE;
+	public static PrintWriter OUT_CSV_FILE;
 	//定義輸出文件
 	static {
 		try{
 			OUT_JSON_FILE = new PrintWriter(new BufferedWriter(new FileWriter(new File(OUT_FILE_URI.resolve("./output.json")))));
 			STATIC_JSON_FILE = new PrintWriter(new BufferedWriter(new FileWriter(new File(OUT_FILE_URI.resolve("./static.json")))));
+			//Vincent
+			OUT_CSV_FILE = new PrintWriter(new BufferedWriter(new FileWriter(new File(OUT_FILE_URI.resolve("./output.csv")))));
 		} catch (IOException e){
 			e.printStackTrace();
 		}
@@ -190,6 +193,9 @@ public class Main {
 		OUT_JSON_FILE.print("}");
 		OUT_JSON_FILE.print("]"); //end json format
 		OUT_JSON_FILE.close();
+		//Vincent
+		OUT_CSV_FILE.close();
+
 		long end = System.currentTimeMillis();
 		time1 += end -start;
 		System.out.println(time1);

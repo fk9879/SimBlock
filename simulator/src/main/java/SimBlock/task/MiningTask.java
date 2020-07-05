@@ -57,13 +57,13 @@ public class MiningTask extends AbstractMintingTask {
 		//打印根節點哈希值
 		System.out.println("root : " + merkleTrees.getRoot());
 
-		ProofOfWorkBlock createdBlock = new ProofOfWorkBlock((ProofOfWorkBlock)this.getParent(), this.getMinter(), getCurrentTime(), this.difficulty);
+		ProofOfWorkBlock createdBlock = new ProofOfWorkBlock((ProofOfWorkBlock)this.getParent(), this.getMinter(), getCurrentTime(), this.difficulty, merkleTrees);
 		this.getMinter().receiveBlock(createdBlock);
 	}
 
 	//Vincent
 	//從全局交易池中選擇需要的交易
-	public ArrayList TrxSelection(ArrayList<Map<String, Object>> TrxPool){
+	public static ArrayList TrxSelection(ArrayList<Map<String, Object>> TrxPool){
 
 	    ArrayList<Map<String, Object>> selectedTrxList = new ArrayList<Map<String, Object>>();
 	    //將BlockSize除以TransactionSize然後向上取整
