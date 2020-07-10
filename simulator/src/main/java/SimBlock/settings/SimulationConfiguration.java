@@ -43,7 +43,7 @@ public class SimulationConfiguration {
 	// Unit: byte
 	public static final long TRANSACTIONSIZE = 250;
 	// Unit: 100 percentage
-	public static final double TRANSACTIONFEEPCT = 0.02;
+	public static final double TRANSACTIONFEEPCT = 0.01;
 	// Log Normal Distribution Scale
 	public static final int SCALE = 5;
 	// Log Normal Distribution Shape

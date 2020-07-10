@@ -49,7 +49,7 @@ public class MiningTask extends AbstractMintingTask {
 	public void run() {
 
 		//Vincent
-		//根據全局交易池，選擇需要的交易
+		//根據全局交易池，選擇需要的交易，除了這個要修改外，還要修改ProofOfWorkBlock.java的genesisBlock方法
 		ArrayList TrxList = TrxSelection(GolbalTrxPool.TrxPool);
 		//生成梅克爾二叉樹
 		MerkleTrees merkleTrees = new MerkleTrees(TrxList);
@@ -69,8 +69,46 @@ public class MiningTask extends AbstractMintingTask {
 	    //將BlockSize除以TransactionSize然後向上取整
 	    Integer count = new Double(Math.ceil(BLOCKSIZE / TRANSACTIONSIZE)).intValue();
 
-        for (int i = 0; i < TrxPool.size() && count > 0; i++) {
-        	//從TrxPool中取出交易
+		//當交易池中還有交易未處理，並且一個Block還沒有填滿
+		for (int i = 0; i < TrxPool.size() && count > 0; i++) {
+        	//從TrxPool中取出交易序號最小一筆
+			Map<String, Object> transaction = TrxPool.get(i);
+			Double price = Double.parseDouble(transaction.get("Price").toString());
+			Double quantity = Double.parseDouble(transaction.get("Quantity").toString());
+			//計算交易手續費
+			double trxFee = price * quantity * TRANSACTIONFEEPCT;
+			transaction.put("TransactionFee", trxFee);
+			int spaceFactor = 1;
+			//記錄通過LogNormalDistrbution計算出的交易佔用空間
+			transaction.put("SpaceFactor", spaceFactor);
+			//如果當前這筆交易不夠放到當前區塊中，選擇下一筆交易
+			if(spaceFactor > count) {
+				continue;
+			}
+			//將交易加入輸出List
+			selectedTrxList.add(transaction);
+			//將交易序號最小一筆交易從交易池去掉
+			TrxPool.remove(i);
+			//將交易池序號減少一個
+			i = i - 1;
+			//減去這筆交易佔用的空間
+			count = count - spaceFactor;
+        }
+		return selectedTrxList;
+	}
+
+
+	//Vincent
+	//從全局交易池中選擇需要的交易
+	public static ArrayList TrxVincentSelection(ArrayList<Map<String, Object>> TrxPool){
+
+		ArrayList<Map<String, Object>> selectedTrxList = new ArrayList<Map<String, Object>>();
+		//將BlockSize除以TransactionSize然後向上取整
+		Integer count = new Double(Math.ceil(BLOCKSIZE / TRANSACTIONSIZE)).intValue();
+
+		//當交易池中還有交易未處理，並且一個Block還沒有填滿
+		for (int i = 0; i < TrxPool.size() && count > 0; i++) {
+			//從TrxPool中取出交易序號最小一筆
 			Map<String, Object> transaction = TrxPool.get(i);
 			Double price = Double.parseDouble(transaction.get("Price").toString());
 			Double quantity = Double.parseDouble(transaction.get("Quantity").toString());
@@ -80,7 +118,7 @@ public class MiningTask extends AbstractMintingTask {
 			//根據交易手續費計算應該佔用的空間係數
 			LogNormalDistribution LND = new LogNormalDistribution(SCALE,SHAPE);
 			//根據Cumulative Probability計算出來的結果向上取整，即0.1=1
-			int spaceFactor = new Double(Math.ceil(LND.cumulativeProbability(trxFee)*5)).intValue();
+			int spaceFactor = new Double(Math.ceil(LND.cumulativeProbability(trxFee)*4)).intValue();
 			//記錄通過LogNormalDistrbution計算出的交易佔用空間
 			transaction.put("SpaceFactor", spaceFactor);
 			//如果當前這筆交易不夠放到當前區塊中，選擇下一筆交易
@@ -91,6 +129,8 @@ public class MiningTask extends AbstractMintingTask {
 			selectedTrxList.add(transaction);
 			//將交易從交易池去掉
 			TrxPool.remove(i);
+			//將交易池序號減少一個
+			i = i - 1;
 			//減去這筆交易佔用的空間
 			count = count - spaceFactor;
 
@@ -126,7 +166,7 @@ public class MiningTask extends AbstractMintingTask {
 				frame.setVisible(true);
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			}*/
-        }
+		}
 		return selectedTrxList;
 	}
 }
