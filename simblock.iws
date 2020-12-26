@@ -1,11 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="97b2a154-2b20-4143-a242-e5365a84c6d5" name="Default Changelist" comment="將Block創建及傳播信息單獨寫入一個csv文件">
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/GeneralInfo.graffle" beforeDir="false" afterPath="$PROJECT_DIR$/docs/GeneralInfo.graffle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simblock.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/simblock.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simblock.iws" beforeDir="false" afterPath="$PROJECT_DIR$/simblock.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/dist/conf/scenario.txt" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/dist/conf/scenario.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/dist/conf/simulator.conf" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/dist/conf/simulator.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/dist/output/graph/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/dist/output/graph/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/AbstractStorageTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/AbstractStorageTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/Coinage.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/Coinage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/MerkleTrees.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/MerkleTrees.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/ProofOfWorkBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/ProofOfWorkBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/SampleProofOfStakeBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/SampleProofOfStakeBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/data/GolbalTrxPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/data/GolbalTrxPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/data/readCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/data/readCSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/consensusAlgo/AbstractConsensusAlgo.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/consensusAlgo/AbstractConsensusAlgo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/consensusAlgo/ProofOfWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/consensusAlgo/ProofOfWork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/consensusAlgo/SampleProofOfStake.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/consensusAlgo/SampleProofOfStake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/routingTable/AbstractRoutingTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/routingTable/AbstractRoutingTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/routingTable/BitcoinCoreTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/routingTable/BitcoinCoreTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/settings/NetworkConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/settings/NetworkConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/settings/SimulationConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/settings/SimulationConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/simulator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/simulator/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/simulator/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/simulator/Network.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/simulator/Simulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/simulator/Simulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/simulator/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/simulator/Timer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/AbstractMessageTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/AbstractMessageTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/AbstractMintingTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/AbstractMintingTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/BlockMessageTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/BlockMessageTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/InvMessageTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/InvMessageTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/MiningTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/MiningTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/RecMessageTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/RecMessageTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/SampleStakingTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/SampleStakingTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/resources/ICBC20141201.csv" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/resources/ICBC20141201.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/resources/output/graph/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/resources/output/graph/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/resources/scenario.txt" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/resources/scenario.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/resources/simulator.conf" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/resources/simulator.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,17 +133,6 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="SimBlock" type="f1a62948:ProjectNode" />
               </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="SimBlock" type="f1a62948:ProjectNode" />
-                <item name="simulator" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="SimBlock" type="f1a62948:ProjectNode" />
-                <item name="simulator" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
             </expand>
             <select />
           </tree_state>
@@ -137,6 +183,9 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -145,7 +194,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -170,9 +219,10 @@
       <Port>5050</Port>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="SimBlock.simulator.Main" />
       <module name="SimBlock.simulator.main" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="SimBlock.simulator.*" />
@@ -190,6 +240,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -204,7 +265,9 @@
         </option>
         <option name="vmOptions" value="" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -236,6 +299,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -260,7 +324,40 @@
       <workItem from="1593188742894" duration="1133000" />
       <workItem from="1593189900841" duration="174000" />
       <workItem from="1593190094189" duration="942000" />
-      <workItem from="1593940203494" duration="9243000" />
+      <workItem from="1593940203494" duration="9277000" />
+      <workItem from="1594396650128" duration="4712000" />
+      <workItem from="1595669904526" duration="120000" />
+      <workItem from="1606223083800" duration="351000" />
+      <workItem from="1606744579074" duration="314000" />
+      <workItem from="1606744944287" duration="50000" />
+      <workItem from="1606745036823" duration="30000" />
+      <workItem from="1606745142766" duration="91000" />
+      <workItem from="1606745270568" duration="189000" />
+      <workItem from="1606745511046" duration="554000" />
+      <workItem from="1606746168939" duration="3067000" />
+      <workItem from="1606749343968" duration="135000" />
+      <workItem from="1606749500881" duration="11000" />
+      <workItem from="1606751516172" duration="10000" />
+      <workItem from="1606751542479" duration="41000" />
+      <workItem from="1606752277145" duration="1997000" />
+      <workItem from="1606822033318" duration="3567000" />
+      <workItem from="1606918138437" duration="8284000" />
+      <workItem from="1607350250384" duration="5681000" />
+      <workItem from="1607431612461" duration="5980000" />
+      <workItem from="1607519834836" duration="3972000" />
+      <workItem from="1607689607772" duration="1372000" />
+      <workItem from="1607779318021" duration="770000" />
+      <workItem from="1607780796866" duration="601000" />
+      <workItem from="1607782358143" duration="206000" />
+      <workItem from="1607782704863" duration="170000" />
+      <workItem from="1607783032190" duration="6730000" />
+      <workItem from="1607953902079" duration="717000" />
+      <workItem from="1608046413076" duration="428000" />
+      <workItem from="1608122529036" duration="1899000" />
+      <workItem from="1608125665797" duration="18597000" />
+      <workItem from="1608389496950" duration="13987000" />
+      <workItem from="1608644521140" duration="520000" />
+      <workItem from="1608645048831" duration="15494000" />
     </task>
     <task id="LOCAL-00001" summary="交易挑選規則更新">
       <created>1593367175810</created>
@@ -297,11 +394,25 @@
       <option name="project" value="LOCAL" />
       <updated>1593940283441</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="將Block創建及傳播信息單獨寫入一個csv文件">
+      <created>1594396573836</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1594396573836</updated>
+    </task>
+    <task id="LOCAL-00007" summary="將Block創建及傳播信息單獨寫入一個csv文件">
+      <created>1606824272447</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1606824272448</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -324,187 +435,19 @@
     <option name="LAST_COMMIT_MESSAGE" value="將Block創建及傳播信息單獨寫入一個csv文件" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="478" y="262" key="#com.intellij.debugger.actions.ViewTextAction" timestamp="1593705873116">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="478" y="262" key="#com.intellij.debugger.actions.ViewTextAction/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1593705873116" />
-    <state x="104" y="62" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593245267089">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="104" y="62" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.800@0.0.1280.800" timestamp="1593245267089" />
-    <state x="377" y="197" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1593186992304">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="377" y="197" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1280.800@0.0.1280.800" timestamp="1593186992304" />
-    <state x="378" y="173" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1593184271993">
-      <screen x="0" y="23" width="1280" height="777" />
-    </state>
-    <state x="378" y="173" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.23.1280.777/-1920.112.1920.1057@0.23.1280.777" timestamp="1593184271993" />
-    <state x="378" y="173" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.23.1280.777@0.23.1280.777" timestamp="1593183858439" />
-    <state x="0" y="0" width="1280" height="800" key="#xdebugger.XInspectDialog" timestamp="1593444176778">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="0" y="0" width="1280" height="800" key="#xdebugger.XInspectDialog/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1593444176778" />
-    <state x="189" y="0" key="CommitChangelistDialog2" timestamp="1594137364025">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="189" y="0" key="CommitChangelistDialog2/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1594137364025" />
-    <state x="100" y="100" width="1080" height="600" key="DiffContextDialog" timestamp="1594136528870">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="100" y="100" width="1080" height="600" key="DiffContextDialog/0.0.1280.800/-1920.112.1920.1057@0.0.1280.800" timestamp="1593705993396" />
-    <state x="100" y="100" width="1080" height="600" key="DiffContextDialog/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1594136528870" />
-    <state width="1238" height="194" key="GridCell.Tab.0.bottom" timestamp="1594396551774">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1238" height="194" key="GridCell.Tab.0.bottom/0.0.1280.800/-1920.112.1920.1057@0.0.1280.800" timestamp="1593705998974" />
-    <state width="1238" height="194" key="GridCell.Tab.0.bottom/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1594396551774" />
-    <state width="1238" height="179" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1593245269883" />
-    <state width="1238" height="194" key="GridCell.Tab.0.bottom/0.23.1280.777/-1920.112.1920.1057@0.23.1280.777" timestamp="1594137151007" />
-    <state width="1238" height="190" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1593183940437" />
-    <state width="1238" height="194" key="GridCell.Tab.0.center" timestamp="1594396551772">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1238" height="194" key="GridCell.Tab.0.center/0.0.1280.800/-1920.112.1920.1057@0.0.1280.800" timestamp="1593705998972" />
-    <state width="1238" height="194" key="GridCell.Tab.0.center/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1594396551772" />
-    <state width="1238" height="179" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1593245269875" />
-    <state width="1238" height="194" key="GridCell.Tab.0.center/0.23.1280.777/-1920.112.1920.1057@0.23.1280.777" timestamp="1594137151005" />
-    <state width="1238" height="190" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1593183940435" />
-    <state width="1238" height="194" key="GridCell.Tab.0.left" timestamp="1594396551771">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1238" height="194" key="GridCell.Tab.0.left/0.0.1280.800/-1920.112.1920.1057@0.0.1280.800" timestamp="1593705998971" />
-    <state width="1238" height="194" key="GridCell.Tab.0.left/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1594396551771" />
-    <state width="1238" height="179" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1593245269870" />
-    <state width="1238" height="194" key="GridCell.Tab.0.left/0.23.1280.777/-1920.112.1920.1057@0.23.1280.777" timestamp="1594137151004" />
-    <state width="1238" height="190" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1593183940435" />
-    <state width="1238" height="194" key="GridCell.Tab.0.right" timestamp="1594396551773">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1238" height="194" key="GridCell.Tab.0.right/0.0.1280.800/-1920.112.1920.1057@0.0.1280.800" timestamp="1593705999160" />
-    <state width="1238" height="194" key="GridCell.Tab.0.right/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1594396551773" />
-    <state width="1238" height="179" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1593245269878" />
-    <state width="1238" height="194" key="GridCell.Tab.0.right/0.23.1280.777/-1920.112.1920.1057@0.23.1280.777" timestamp="1594137151100" />
-    <state width="1238" height="190" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1593183940436" />
-    <state width="1238" height="194" key="GridCell.Tab.1.bottom" timestamp="1594396551781">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1238" height="194" key="GridCell.Tab.1.bottom/0.0.1280.800/-1920.112.1920.1057@0.0.1280.800" timestamp="1593705998981" />
-    <state width="1238" height="194" key="GridCell.Tab.1.bottom/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1594396551781" />
-    <state width="1238" height="179" key="GridCell.Tab.1.bottom/0.0.1280.800@0.0.1280.800" timestamp="1593245269886" />
-    <state width="1238" height="194" key="GridCell.Tab.1.bottom/0.23.1280.777/-1920.112.1920.1057@0.23.1280.777" timestamp="1594137151011" />
-    <state width="1238" height="194" key="GridCell.Tab.1.center" timestamp="1594396551777">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1238" height="194" key="GridCell.Tab.1.center/0.0.1280.800/-1920.112.1920.1057@0.0.1280.800" timestamp="1593705998977" />
-    <state width="1238" height="194" key="GridCell.Tab.1.center/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1594396551777" />
-    <state width="1238" height="179" key="GridCell.Tab.1.center/0.0.1280.800@0.0.1280.800" timestamp="1593245269885" />
-    <state width="1238" height="194" key="GridCell.Tab.1.center/0.23.1280.777/-1920.112.1920.1057@0.23.1280.777" timestamp="1594137151009" />
-    <state width="1238" height="194" key="GridCell.Tab.1.left" timestamp="1594396551775">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1238" height="194" key="GridCell.Tab.1.left/0.0.1280.800/-1920.112.1920.1057@0.0.1280.800" timestamp="1593705998976" />
-    <state width="1238" height="194" key="GridCell.Tab.1.left/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1594396551775" />
-    <state width="1238" height="179" key="GridCell.Tab.1.left/0.0.1280.800@0.0.1280.800" timestamp="1593245269884" />
-    <state width="1238" height="194" key="GridCell.Tab.1.left/0.23.1280.777/-1920.112.1920.1057@0.23.1280.777" timestamp="1594137151008" />
-    <state width="1238" height="194" key="GridCell.Tab.1.right" timestamp="1594396551779">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1238" height="194" key="GridCell.Tab.1.right/0.0.1280.800/-1920.112.1920.1057@0.0.1280.800" timestamp="1593705998978" />
-    <state width="1238" height="194" key="GridCell.Tab.1.right/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1594396551779" />
-    <state width="1238" height="179" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1593245269886" />
-    <state width="1238" height="194" key="GridCell.Tab.1.right/0.23.1280.777/-1920.112.1920.1057@0.23.1280.777" timestamp="1594137151010" />
-    <state x="269" y="129" key="NewModule_or_Project.wizard" timestamp="1593188919120">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="269" y="129" key="NewModule_or_Project.wizard/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1593188919120" />
-    <state x="269" y="129" key="NewModule_or_Project.wizard/0.0.1280.800@0.0.1280.800" timestamp="1593187106170" />
-    <state x="350" y="109" key="RollbackChangesDialog" timestamp="1593450819021">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="350" y="109" key="RollbackChangesDialog/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1593450819021" />
-    <state x="256" y="23" width="1024" height="777" key="SettingsEditor" timestamp="1593331179223">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="256" y="23" key="SettingsEditor/0.0.1280.800/-1920.112.1920.1057@0.0.1280.800" timestamp="1593331179223" />
-    <state x="128" y="23" width="1024" height="777" key="SettingsEditor/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1593190378293" />
-    <state x="256" y="23" width="1024" height="777" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1593244976830" />
-    <state x="128" y="23" key="SettingsEditor/0.23.1280.777/-1920.112.1920.1057@0.23.1280.777" timestamp="1593184404013" />
-    <state x="128" y="23" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1593183864432" />
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1593940285991">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1593940285991" />
-    <state width="640" height="400" key="XDebugger.FullValuePopup" timestamp="1593935966577">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="640" height="400" key="XDebugger.FullValuePopup/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1593935966577" />
-    <state x="100" y="100" width="1080" height="600" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1594135352719">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="100" y="100" width="1080" height="600" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1594135352719" />
-    <state x="352" y="297" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1593186421986">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="352" y="297" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1593185568004" />
-    <state x="352" y="297" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1280.800@0.0.1280.800" timestamp="1593186421986" />
-    <state x="352" y="311" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.23.1280.777/-1920.112.1920.1057@0.23.1280.777" timestamp="1593184394962" />
-    <state x="341" y="155" width="598" height="490" key="find.popup" timestamp="1594306324928">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="341" y="155" width="598" height="490" key="find.popup/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1594306324928" />
-    <state x="321" y="195" key="git4idea.merge.GitPullDialog" timestamp="1593700885143">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="321" y="195" key="git4idea.merge.GitPullDialog/0.0.1280.800/-1920.112.1920.1057@0.0.1280.800" timestamp="1593700885143" />
-    <state x="321" y="195" key="git4idea.merge.GitPullDialog/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1593274007750" />
-    <state x="34" y="63" key="new project wizard" timestamp="1593186922176">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="34" y="63" key="new project wizard/0.0.1280.800@0.0.1280.800" timestamp="1593186922176" />
-    <state x="305" y="185" width="670" height="675" key="run.anything.popup" timestamp="1593244981247">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="305" y="185" width="670" height="675" key="run.anything.popup/0.0.1280.800@0.0.1280.800" timestamp="1593244981247" />
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1593920815858">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800/-1920.89.1920.1080@0.0.1280.800" timestamp="1593920815858" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/MiningTask.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/MerkleTrees.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/Node.java</url>
-          <line>124</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/Node.java</url>
-          <line>117</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/MiningTask.java</url>
-          <line>111</line>
-          <option name="timeStamp" value="13" />
+          <url>file://$PROJECT_DIR$/simulator/src/main/java/SimBlock/simulator/Main.java</url>
+          <line>158</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
-        <PinnedItemInfo typeName="SimBlock.block.MerkleTrees" fieldName="merkleTree" />
+        <PinnedItemInfo />
       </pinned-members>
     </pin-to-top-manager>
   </component>

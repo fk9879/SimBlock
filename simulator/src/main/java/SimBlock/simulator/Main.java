@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import SimBlock.block.Block;
@@ -68,68 +69,101 @@ public class Main {
 		}
 	}
 
-	public static void main(String[] args){
-		long start = System.currentTimeMillis();
-		setTargetInterval(INTERVAL);
+	public static void main(String[] args) {
 
-		OUT_JSON_FILE.print("["); //start json format
-		OUT_JSON_FILE.flush();
 
-		//Vincent
-		//從CSV文件中讀取全部的交易數據
-		new readCSV().readFile("ICBC20141201.csv", GolbalTrxPool.TrxPool);
+		//Vincent Experiment
+		for (double k = 6; k <= 20; k = k + 1) {
+			for (double i = 0.1; i <= 2; i = i + 0.1) {
 
-		//把NetworkConfiguration中定義的地區信息先輸出到json文件
-		printRegion();
+				//Vincent Experiment Initialization
+				GolbalTrxPool.TrxPool.clear();
+				Simulator.resetSimulatedNodes();
+				resetTask();
+				MINBLOCKTRXFEE = 999999999.9;
+				MAXBLOCKTRXFEE = 0.0;
+				BLOCKHEIGHT = 0.0;
+				REMAINTRX = 0.0;
 
-		//根據以下信息來構建 SimulationCOnfiguration 裡面定義的 NUM_OF_NODES 個區塊鏈節點網絡
-		// NetworkConfiguration地區劃分，
-		// NetworkConfiguration級別劃分，
-		// 算力，
-		// 網絡連接Table SimBlock.node.routingTable.BitcoinCoreTable，
-		// 算法 SimBlock.node.consensusAlgo.SampleProofOfStake
-		// 1. 創建節點
-		// 2. 把節點加入網絡，加到節點List裡面去
-		// 3. 獲得創世區塊
-		// 	3.1. 根據不同共識協議，獲得創世區塊 Node.java  genesisBlock()
-		//		3.1.1. 調用不同共識協議的創世區塊方法	consensusAlgo.genesisBlock()
-		//		3.1.2. Pow調用自己的創世區塊方法	ProofOfWorkBlock.genesisBlock()
-		// 	3.2. 收到創世區塊 Node.java  receiveBlock()
-		//		3.2.1. 如果新區塊是有效的
-		//		3.2.2. 如果當前節點挖出自己的區塊，收到區塊與自己的區塊不能同時存在於區塊鏈，則將自己的區塊設為孤兒區塊
-		//		3.2.3. 把創世區塊加入區塊鏈 Node.java  receiveBlock()  addToChain()
-		//		3.2.4. 挖礦，將挖礦任務放入隊列中 Node.java  receiveBlock()  minting()   增加一個挖礦任務, Interval 比較長
-		//		3.2.5. 把區塊八卦到臨近節點 Node.java  receiveBlock()  sendInv()  為每一個鄰居增加一個Message任務
+				SCALE = k;
+				SHAPE = i;
 
-		constructNetworkWithAllNode(NUM_OF_NODES);
+				long start = System.currentTimeMillis();
+				setTargetInterval(INTERVAL);
 
-		//	將創世區塊及八卦任務，加入Task隊列並啟動任務運行後 22 InvMessageTask & 1 MiningTask
-		//	不斷會有其他節點收到八卦信息，InvMessageTask，RecMessageTask，BlockMessageTask，如果收到了receiveMessage BlockMessageTask任務
-        //	並啟動挖礦任務，並生成新節點，並啟動自己的八卦任務。
-		//	Task隊列的內容會不斷增加，整個區塊鏈網絡的活動就逐漸啟動了
-		int j=1;
-		while(getTask() != null){
-			if(getTask() instanceof AbstractMintingTask){
-				//如果是挖礦任務的話
-				AbstractMintingTask task = (AbstractMintingTask) getTask();
-				if(task.getParent().getHeight() == j) j++;
-				if(j > ENDBLOCKHEIGHT){break;}
-				if(j%100==0 || j==2) writeGraph(j);
+				OUT_JSON_FILE.print("["); //start json format
+				OUT_JSON_FILE.flush();
+
+				//Vincent
+				//從CSV文件中讀取全部的交易數據
+				//new readCSV().readFile("ICBC20141201.csv", GolbalTrxPool.TrxPool);
+				new readCSV().readFile("BitcoinTransactions.csv", GolbalTrxPool.TrxPool);
+
+				//把NetworkConfiguration中定義的地區信息先輸出到json文件
+				printRegion();
+
+				//根據以下信息來構建 SimulationCOnfiguration 裡面定義的 NUM_OF_NODES 個區塊鏈節點網絡
+				// NetworkConfiguration地區劃分，
+				// NetworkConfiguration級別劃分，
+				// 算力，
+				// 網絡連接Table SimBlock.node.routingTable.BitcoinCoreTable，
+				// 算法 SimBlock.node.consensusAlgo.SampleProofOfStake
+				// 1. 創建節點
+				// 2. 把節點加入網絡，加到節點List裡面去
+				// 3. 獲得創世區塊
+				// 	3.1. 根據不同共識協議，獲得創世區塊 Node.java  genesisBlock()
+				//		3.1.1. 調用不同共識協議的創世區塊方法	consensusAlgo.genesisBlock()
+				//		3.1.2. Pow調用自己的創世區塊方法	ProofOfWorkBlock.genesisBlock()
+				// 	3.2. 收到創世區塊 Node.java  receiveBlock()
+				//		3.2.1. 如果新區塊是有效的
+				//		3.2.2. 如果當前節點挖出自己的區塊，收到區塊與自己的區塊不能同時存在於區塊鏈，則將自己的區塊設為孤兒區塊
+				//		3.2.3. 把創世區塊加入區塊鏈 Node.java  receiveBlock()  addToChain()
+				//		3.2.4. 挖礦，將挖礦任務放入隊列中 Node.java  receiveBlock()  minting()   增加一個挖礦任務, Interval 比較長
+				//		3.2.5. 把區塊八卦到臨近節點 Node.java  receiveBlock()  sendInv()  為每一個鄰居增加一個Message任務
+
+				constructNetworkWithAllNode(NUM_OF_NODES);
+				System.out.println("Done construct Network With All Nodes");
+
+				//	將創世區塊及八卦任務，加入Task隊列並啟動任務運行後 22 InvMessageTask & 1 MiningTask
+				//	不斷會有其他節點收到八卦信息，InvMessageTask，RecMessageTask，BlockMessageTask，如果收到了receiveMessage BlockMessageTask任務
+				//	並啟動挖礦任務，並生成新節點，並啟動自己的八卦任務。
+				//	Task隊列的內容會不斷增加，整個區塊鏈網絡的活動就逐漸啟動了
+				int j = 1;
+				while (getTask() != null) {
+
+					//System.out.println("y4--");
+					if (getTask() instanceof AbstractMintingTask) {
+						//如果是挖礦任務的話
+						AbstractMintingTask task = (AbstractMintingTask) getTask();
+						if (task.getParent().getHeight() == j) j++;
+						if (j > ENDBLOCKHEIGHT) {
+							break;
+						}
+						if (j % 100 == 0 || j == 2) writeGraph(j);
+					}
+					//System.out.println("y2--");
+					// main Mian() -> Timer runTask() -> AbstratMessageTask run() -> Node receiveMessage()
+					// receiveMeaage 中判斷 InvMessageTask、RecMessageTask、BlockMessageTask
+					// 其中，InvMessageTask 會增加 RecMessageTask; RecMessageTask -> sendNextBlockMessage() 會增加 BlockMessageTask
+					// BlockMessageTask 會 調用 receiveBlock()
+					//		3.2.1. 如果新區塊是有效的
+					//		3.2.2. 如果當前節點挖出自己的區塊，收到區塊與自己的區塊不能同時存在於區塊鏈，則將自己的區塊設為孤兒區塊
+					//		3.2.3. 把區塊加入區塊鏈 Node.java  receiveBlock()  addToChain()
+					//		3.2.4. 挖礦，將挖礦任務放入隊列中 Node.java  receiveBlock()  minting()
+					//		3.2.5. 把區塊八卦到臨近節點 Node.java  receiveBlock()  sendInv()
+					runTask();
+
+					//System.out.println("y1--"+(getTask() != null));
+				}
+				System.out.println("SCALE:" + SCALE + " SHAPE:" + SHAPE);
+				OUT_CSV_FILE.println("SCALE:" + SCALE + " SHAPE:" + SHAPE + "," + SCALE + "," + SHAPE + "," + MAXBLOCKTRXFEE + "," + MINBLOCKTRXFEE + "," + BLOCKHEIGHT + "," + REMAINTRX);
+
+				OUT_CSV_FILE.flush();
 			}
-			// main Mian() -> Timer runTask() -> AbstratMessageTask run() -> Node receiveMessage()
-			// receiveMeaage 中判斷 InvMessageTask、RecMessageTask、BlockMessageTask
-			// 其中，InvMessageTask 會增加 RecMessageTask; RecMessageTask -> sendNextBlockMessage() 會增加 BlockMessageTask
-			// BlockMessageTask 會 調用 receiveBlock()
-			//		3.2.1. 如果新區塊是有效的
-			//		3.2.2. 如果當前節點挖出自己的區塊，收到區塊與自己的區塊不能同時存在於區塊鏈，則將自己的區塊設為孤兒區塊
-			//		3.2.3. 把區塊加入區塊鏈 Node.java  receiveBlock()  addToChain()
-			//		3.2.4. 挖礦，將挖礦任務放入隊列中 Node.java  receiveBlock()  minting()
-			//		3.2.5. 把區塊八卦到臨近節點 Node.java  receiveBlock()  sendInv()
-			runTask();
-		}
+			//OUT_CSV_FILE.flush();
 
-		//打印所有的傳播信息
-		printAllPropagation();
+			//打印所有的傳播信息
+		/*printAllPropagation();
 
 		System.out.println();
 
@@ -198,8 +232,10 @@ public class Main {
 
 		long end = System.currentTimeMillis();
 		time1 += end -start;
-		System.out.println(time1);
+		System.out.println(time1);*/
 
+	//Vincent Experiment
+		}
 	}
 
 

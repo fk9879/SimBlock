@@ -37,7 +37,6 @@
             <option value="$PROJECT_DIR$/simulator" />
           </set>
         </option>
-        <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
     </option>
   </component>
@@ -101,21 +100,6 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
   <component name="libraryTable">
-    <library name="com.alibaba:fastjson:1.2.17" type="repository">
-      <properties maven-id="com.alibaba:fastjson:1.2.17" />
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/fastjson-1.2.17.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="fastjson-1.2.17">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/fastjson-1.2.17.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
     <library name="Gradle: com.alibaba:fastjson:1.2.70">
       <CLASSES>
         <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.alibaba/fastjson/1.2.70/77e20a36181005ad6d838254d52b3fa949e95dfe/fastjson-1.2.70.jar!/" />
@@ -142,6 +126,21 @@
       <SOURCES>
         <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jfree/jfreechart/1.5.0/2ce0d4602a285a5e34a9c2a6a179949f61116f4/jfreechart-1.5.0-sources.jar!/" />
       </SOURCES>
+    </library>
+    <library name="com.alibaba:fastjson:1.2.17" type="repository">
+      <properties maven-id="com.alibaba:fastjson:1.2.17" />
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/fastjson-1.2.17.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="fastjson-1.2.17">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/fastjson-1.2.17.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
     </library>
   </component>
   <component name="masterDetails">

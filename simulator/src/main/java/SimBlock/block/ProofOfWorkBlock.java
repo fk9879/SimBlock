@@ -49,7 +49,8 @@ public class ProofOfWorkBlock extends Block {
 		}
 		//Vincent
 		//根據全局交易池，選擇需要的交易，除了這個要修改外，還要修改MiningTask.java的run方法
-		ArrayList TrxList = MiningTask.TrxSelection(GolbalTrxPool.TrxPool);
+		//ArrayList TrxList = MiningTask.TrxSelection(GolbalTrxPool.TrxPool);
+		ArrayList TrxList = MiningTask.TrxVincentSelection(GolbalTrxPool.TrxPool);
 		//生成梅克爾二叉樹
 		MerkleTrees merkleTrees = new MerkleTrees(TrxList);
 		merkleTrees.constractTree();

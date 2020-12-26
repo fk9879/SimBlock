@@ -34,16 +34,18 @@ public class MerkleTrees extends AbstractStorageTree {
         }
 
         //Vincent
-        int level = 0;
-        List<String> newTxList = getNewTxList(tempTxList,level);
+        //int level = 0;
+        //List<String> newTxList = getNewTxList(tempTxList,level);
 
         //执行循环，直到只剩下一个hash值
-        while (newTxList.size() != 1) {
-            level++;
-            newTxList = getNewTxList(newTxList,level);
-        }
+        //while (newTxList.size() != 0 && newTxList.size() != 1) {
+        //    level++;
+        //    newTxList = getNewTxList(newTxList,level);
+        //}
 
-        this.root = newTxList.get(0);
+        //如果沒有交易了就不執行
+        //if(newTxList.size() != 0)
+        //    this.root = newTxList.get(0);
     }
 
     @Override

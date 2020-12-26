@@ -119,10 +119,17 @@ public class Node {
 				JSONObject innerJson = JSONObject.parseObject(jsonObject.get(entry.getKey()).toString());
 				JSONObject leftTrx = JSONObject.parseObject(innerJson.get("left").toString());
 				JSONObject rightTrx = JSONObject.parseObject(innerJson.get("right").toString());
-				OUT_CSV_FILE.println(this.getNodeID()+","+newBlock.getId() +","+leftTrx.get("TradeID")+","+rightTrx.get("TradeID")+","+getCurrentTime());
+				//OUT_CSV_FILE.println(this.getNodeID()+","+newBlock.getId() +","+leftTrx.get("TradeID")+","+rightTrx.get("TradeID")+","+getCurrentTime());
+				//在Excel中打印每个节点、每个区块、每个Melckre Tree左右节点里面的交易
+				//OUT_CSV_FILE.println(this.getNodeID()+","+newBlock.getId() +","+leftTrx.get("TradeID")+",left,"+leftTrx.get("TotalTransactionFee")+","+getCurrentTime());
+				//OUT_CSV_FILE.println(this.getNodeID()+","+newBlock.getId() +","+rightTrx.get("TradeID")+",right,"+rightTrx.get("TotalTransactionFee")+","+getCurrentTime());
+				//在Excel中只打印第一个节点中的所有区块，且TotalTransactionFee不为0的记录
+				/*if(1== this.getNodeID() && 0 != new Double(rightTrx.get("TotalTransactionFee").toString())){
+					OUT_CSV_FILE.println(this.getNodeID()+","+newBlock.getId() +","+leftTrx.get("TradeID")+",left,"+leftTrx.get("TotalTransactionFee")+","+getCurrentTime());
+					OUT_CSV_FILE.println(this.getNodeID()+","+newBlock.getId() +","+rightTrx.get("TradeID")+",right,"+rightTrx.get("TotalTransactionFee")+","+getCurrentTime());
+				}*/
 			}
 		}
-		OUT_CSV_FILE.flush();
 	}
 
 	public void addOrphans(Block orphanBlock, Block validBlock){
@@ -164,8 +171,14 @@ public class Node {
 				this.addOrphans(this.block, block);
 			}
 			this.addToChain(block);
+
+			//System.out.println("x3");
 			this.minting();
+
+			//System.out.println("x4");
 			this.sendInv(block);
+
+			//System.out.println("x5");
 		}else if(!this.orphans.contains(block) && !block.isOnSameChainAs(this.block)){
 			this.addOrphans(block, this.block);
 			arriveBlock(block, this);

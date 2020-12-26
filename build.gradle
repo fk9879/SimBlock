@@ -65,8 +65,8 @@ subprojects {
         doLast {
             def windowsScriptFile = file getWindowsScript()
             def unixScriptFile = file getUnixScript()
-            windowsScriptFile.text = windowsScriptFile.text.replace('%APP_HOME%\\lib\\conf', '%APP_HOME%\\conf')
-            unixScriptFile.text = unixScriptFile.text.replace('$APP_HOME/lib/conf', '$APP_HOME/conf')
+            //windowsScriptFile.text = windowsScriptFile.text.replace('%APP_HOME%\\lib\\conf', '%APP_HOME%\\conf')
+            //unixScriptFile.text = unixScriptFile.text.replace('$APP_HOME/lib/conf', '$APP_HOME/conf')
         }
     }
 

@@ -29,6 +29,9 @@ public class Simulator {
 	private static long targetInterval;//msec
 	
 	public static ArrayList<Node> getSimulatedNodes(){ return simulatedNodes; }
+
+	//Vincent
+	public static void resetSimulatedNodes(){ simulatedNodes.clear(); }
 	public static long getTargetInterval(){ return targetInterval; }
 	public static void setTargetInterval(long interval){ targetInterval = interval; }
 	
@@ -73,11 +76,11 @@ public class Simulator {
 	}
 	
 	public static void printPropagation(Block block,LinkedHashMap<Integer, Long> propagation){
-		System.out.println(block + ":" + block.getHeight());
+		//System.out.println(block + ":" + block.getHeight());
 		for(Map.Entry<Integer, Long> timeEntry : propagation.entrySet()){
-			System.out.println(timeEntry.getKey() + "," + timeEntry.getValue());
+			//System.out.println(timeEntry.getKey() + "," + timeEntry.getValue());
 		}
-		System.out.println();
+		//System.out.println();
 	}
 	
 	public static void printAllPropagation(){

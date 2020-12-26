@@ -21,13 +21,22 @@ public class readCSV {
                 Map<String, Object> transaction = new HashMap<String, Object>();
 
                 if (st.hasMoreTokens()) {
-                    transaction.put("SecurityCode", st.nextToken().trim());
+                    //Read Old ICBC201241201.csv file
+                    /*transaction.put("SecurityCode", st.nextToken().trim());
                     transaction.put("RecordType", st.nextToken().trim());
                     transaction.put("TradeID", st.nextToken().trim());
                     transaction.put("Price", st.nextToken().trim());
                     transaction.put("Quantity", st.nextToken().trim());
                     transaction.put("TradeType", st.nextToken().trim());
-                    transaction.put("TradeTime", st.nextToken().trim());
+                    transaction.put("TradeTime", st.nextToken().trim());*/
+                    transaction.put("Timestamp", st.nextToken().trim());
+                    transaction.put("Open", st.nextToken().trim());
+                    transaction.put("High", st.nextToken().trim());
+                    transaction.put("Low", st.nextToken().trim());
+                    transaction.put("Close", st.nextToken().trim());
+                    transaction.put("Volume_(BTC)", st.nextToken().trim());
+                    transaction.put("Volume_(Currency)", st.nextToken().trim());
+                    transaction.put("Weighted_Price", st.nextToken().trim());
                     //使用ArrayList接收数据
                     Trxlist.add(transaction);
                 }

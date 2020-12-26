@@ -38,6 +38,7 @@ public class Timer {
 		}
 		
 		private Task getTask(){ return this.task; }
+
 		private long getScheduledTime(){ return this.scheduledTime; }
 		
 		public int compareTo(ScheduledTask o) {
@@ -52,10 +53,16 @@ public class Timer {
 	public static void runTask(){
 		if(taskQueue.size() > 0){
 			ScheduledTask currentScheduledTask = taskQueue.poll();
+			//System.out.println("z2--");
 			Task currentTask = currentScheduledTask.getTask();
+			//System.out.println("z3--");
 			currentTime = currentScheduledTask.getScheduledTime();
+			//System.out.println("z4--");
 			taskMap.remove(currentTask, currentScheduledTask);
+			//System.out.println("z5--");
 			currentTask.run();
+
+			//System.out.println("z1--"+taskQueue.size());
 		}
 	}
 
@@ -75,6 +82,9 @@ public class Timer {
 			return null;
 		}
 	}
+
+	//Vincent
+	public static void resetTask(){taskQueue.clear();}
 	
 	public static void putTask(Task task){
 		ScheduledTask stask = new ScheduledTask(task, currentTime + task.getInterval());
