@@ -22,47 +22,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97b2a154-2b20-4143-a242-e5365a84c6d5" name="Default Changelist" comment="將Block創建及傳播信息單獨寫入一個csv文件">
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/GeneralInfo.graffle" beforeDir="false" afterPath="$PROJECT_DIR$/docs/GeneralInfo.graffle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simblock.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/simblock.ipr" afterDir="false" />
+    <list default="true" id="97b2a154-2b20-4143-a242-e5365a84c6d5" name="Default Changelist" comment="可以根据不同Scale和Shape进行模拟的程序">
       <change beforePath="$PROJECT_DIR$/simblock.iws" beforeDir="false" afterPath="$PROJECT_DIR$/simblock.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/dist/conf/scenario.txt" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/dist/conf/scenario.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/dist/conf/simulator.conf" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/dist/conf/simulator.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/dist/output/graph/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/dist/output/graph/.gitkeep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/AbstractStorageTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/AbstractStorageTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/Coinage.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/Coinage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/MerkleTrees.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/MerkleTrees.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/ProofOfWorkBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/ProofOfWorkBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/SampleProofOfStakeBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/block/SampleProofOfStakeBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/data/GolbalTrxPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/data/GolbalTrxPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/data/readCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/data/readCSV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/consensusAlgo/AbstractConsensusAlgo.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/consensusAlgo/AbstractConsensusAlgo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/consensusAlgo/ProofOfWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/consensusAlgo/ProofOfWork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/consensusAlgo/SampleProofOfStake.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/consensusAlgo/SampleProofOfStake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/routingTable/AbstractRoutingTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/routingTable/AbstractRoutingTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/routingTable/BitcoinCoreTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/node/routingTable/BitcoinCoreTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/settings/NetworkConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/settings/NetworkConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/settings/SimulationConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/settings/SimulationConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/simulator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/simulator/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/simulator/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/simulator/Network.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/simulator/Simulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/simulator/Simulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/simulator/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/simulator/Timer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/AbstractMessageTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/AbstractMessageTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/AbstractMintingTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/AbstractMintingTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/BlockMessageTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/BlockMessageTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/InvMessageTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/InvMessageTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/MiningTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/MiningTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/RecMessageTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/RecMessageTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/SampleStakingTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/SampleStakingTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/resources/ICBC20141201.csv" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/resources/ICBC20141201.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/resources/output/graph/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/resources/output/graph/.gitkeep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/resources/scenario.txt" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/resources/scenario.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/resources/simulator.conf" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/resources/simulator.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +159,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -357,7 +322,12 @@
       <workItem from="1608125665797" duration="18597000" />
       <workItem from="1608389496950" duration="13987000" />
       <workItem from="1608644521140" duration="520000" />
-      <workItem from="1608645048831" duration="15494000" />
+      <workItem from="1608645048831" duration="37180000" />
+      <workItem from="1609250344200" duration="1888000" />
+      <workItem from="1609252316340" duration="282000" />
+      <workItem from="1609253237198" duration="2576000" />
+      <workItem from="1609335105514" duration="61000" />
+      <workItem from="1609339598530" duration="1198000" />
     </task>
     <task id="LOCAL-00001" summary="交易挑選規則更新">
       <created>1593367175810</created>
@@ -408,7 +378,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606824272448</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="可以根据不同Scale和Shape进行模拟的程序">
+      <created>1608947857220</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1608947857220</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -432,7 +409,8 @@
     <MESSAGE value="構建梅克爾樹" />
     <MESSAGE value="構建梅克爾樹完結" />
     <MESSAGE value="將Block創建及傳播信息單獨寫入一個csv文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="將Block創建及傳播信息單獨寫入一個csv文件" />
+    <MESSAGE value="可以根据不同Scale和Shape进行模拟的程序" />
+    <option name="LAST_COMMIT_MESSAGE" value="可以根据不同Scale和Shape进行模拟的程序" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -440,8 +418,28 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/simulator/src/main/java/SimBlock/simulator/Main.java</url>
-          <line>158</line>
+          <line>160</line>
           <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/MiningTask.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simulator/src/main/java/SimBlock/data/readCSV.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/MiningTask.java</url>
+          <line>114</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simulator/src/main/java/SimBlock/task/MiningTask.java</url>
+          <line>171</line>
+          <option name="timeStamp" value="64" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

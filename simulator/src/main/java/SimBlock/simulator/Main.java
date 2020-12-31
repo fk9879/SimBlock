@@ -73,7 +73,7 @@ public class Main {
 
 
 		//Vincent Experiment
-		for (double k = 6; k <= 20; k = k + 1) {
+		/*for (double k = 6; k <= 20; k = k + 1) {
 			for (double i = 0.1; i <= 2; i = i + 0.1) {
 
 				//Vincent Experiment Initialization
@@ -86,7 +86,7 @@ public class Main {
 				REMAINTRX = 0.0;
 
 				SCALE = k;
-				SHAPE = i;
+				SHAPE = i;*/
 
 				long start = System.currentTimeMillis();
 				setTargetInterval(INTERVAL);
@@ -95,9 +95,9 @@ public class Main {
 				OUT_JSON_FILE.flush();
 
 				//Vincent
-				//從CSV文件中讀取全部的交易數據
+				//從CSV文件中讀取16000条，相当于11天的交易數據
 				//new readCSV().readFile("ICBC20141201.csv", GolbalTrxPool.TrxPool);
-				new readCSV().readFile("BitcoinTransactions.csv", GolbalTrxPool.TrxPool);
+				new readCSV().readFile("BitcoinTransactions.csv", 16000, GolbalTrxPool.TrxPool);
 
 				//把NetworkConfiguration中定義的地區信息先輸出到json文件
 				printRegion();
@@ -156,10 +156,12 @@ public class Main {
 					//System.out.println("y1--"+(getTask() != null));
 				}
 				System.out.println("SCALE:" + SCALE + " SHAPE:" + SHAPE);
-				OUT_CSV_FILE.println("SCALE:" + SCALE + " SHAPE:" + SHAPE + "," + SCALE + "," + SHAPE + "," + MAXBLOCKTRXFEE + "," + MINBLOCKTRXFEE + "," + BLOCKHEIGHT + "," + REMAINTRX);
 
+				//Strategy 6-10
+				OUT_CSV_FILE.println("SCALE:" + SCALE + " SHAPE:" + SHAPE + "," + SCALE + "," + SHAPE + "," + MAXBLOCKTRXFEE + "," + MINBLOCKTRXFEE + "," + BLOCKHEIGHT + "," + REMAINTRX);
 				OUT_CSV_FILE.flush();
 			}
+			//Strategy 1-5
 			//OUT_CSV_FILE.flush();
 
 			//打印所有的傳播信息
@@ -235,8 +237,8 @@ public class Main {
 		System.out.println(time1);*/
 
 	//Vincent Experiment
-		}
-	}
+	/*	}
+	}*/
 
 
 	//TODO　计划在下面加载初始生成的方案

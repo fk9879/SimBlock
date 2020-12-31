@@ -18,6 +18,7 @@ package SimBlock.task;
 import SimBlock.block.MerkleTrees;
 import SimBlock.block.ProofOfWorkBlock;
 import SimBlock.data.GolbalTrxPool;
+import SimBlock.data.readCSV;
 import SimBlock.node.Node;
 import SimBlock.settings.SimulationConfiguration;
 import org.apache.commons.math3.distribution.LogNormalDistribution;
@@ -55,7 +56,8 @@ public class MiningTask extends AbstractMintingTask {
 		//Vincent
 		//根據全局交易池，選擇需要的交易，除了這個要修改外，還要修改ProofOfWorkBlock.java的genesisBlock方法
 		//ArrayList TrxList = TrxSelection(GolbalTrxPool.TrxPool);
-		//System.out.println("zz1--");
+		//载入TransactionPool 额外2500笔，即1.7天的交易数据。
+		new readCSV().readFile("BitcoinTransactions.csv", 2100, GolbalTrxPool.TrxPool);
 		ArrayList TrxList = TrxVincentSelection(GolbalTrxPool.TrxPool);
 		//生成梅克爾二叉樹
 		MerkleTrees merkleTrees = new MerkleTrees(TrxList);
@@ -110,26 +112,35 @@ public class MiningTask extends AbstractMintingTask {
 	//Vincent
 	//從全局交易池中選擇需要的交易
 	public static ArrayList TrxVincentSelection(ArrayList<Map<String, Object>> TrxPool){
-		//System.out.println("ee1");
 		ArrayList<Map<String, Object>> selectedTrxList = new ArrayList<Map<String, Object>>();
-		//System.out.println(selectedTrxList.size());
 		//將BlockSize除以TransactionSize然後向上取整
 		Integer count = new Double(Math.ceil(BLOCKSIZE / TRANSACTIONSIZE)).intValue();
 		Double totalTrxFee = new Double(0);
-		//System.out.println(TrxPool.size());
 		//當交易池中還有交易未處理，並且一個Block還沒有填滿
 		for (int i = 0; TrxPool.size() != 0 && i < TrxPool.size() && count > 0; i++) {
-			//System.out.println(i);
 			//從TrxPool中取出交易序號最小一筆
 			Map<String, Object> transaction = TrxPool.get(i);
-			//Read Old ICBC201241201.csv file
-			/*Double price = Double.parseDouble(transaction.get("Price").toString());
-			Double quantity = Double.parseDouble(transaction.get("Quantity").toString());*/
 			String temp = transaction.get("Volume_(Currency)").toString();
 			Double Volume_Currency = Double.parseDouble(temp);
 			//計算交易手續費
 			double trxFee = Volume_Currency * TRANSACTIONFEEPCT;
-			//根據交易手續費計算應該佔用的空間係數
+
+			//Strategy 1
+			int spaceFactor = 1;
+			totalTrxFee = totalTrxFee + trxFee;
+			transaction.put("TransactionFee", trxFee);
+			//將交易加入輸出List
+			selectedTrxList.add(transaction);
+			//將交易從交易池去掉
+			TrxPool.remove(i);
+			//將交易池序號減少一個
+			i = i - 1;
+			//減去這筆交易佔用的空間
+			count = count - spaceFactor;
+			transaction.put("SpaceFactor", spaceFactor);
+
+			//Strategy 6-10
+			/*//根據交易手續費計算應該佔用的空間係數
 			LogNormalDistribution LND = new LogNormalDistribution(SCALE,SHAPE);
 			//根據Cumulative Probability計算出來的結果向上取整，即0.1=1
 			int spaceFactor = new Double(Math.ceil(LND.cumulativeProbability(trxFee)*27)).intValue();
@@ -153,12 +164,12 @@ public class MiningTask extends AbstractMintingTask {
 				i = i - 1;
 				//減去這筆交易佔用的空間
 				count = count - spaceFactor;
-			}
+			}*/
 			//如果是最后一笔纳入区块的交易，则记录总交易手续费，否则每笔交易的交易手续费设置为0
 			//如果区块被填满，或者已经没有可以放入一个区块的交易，或者所有的交易都已经被放入区块
 			if(count == 0 || i>= TrxPool.size() || TrxPool.size() ==0) {
 				transaction.put("TotalTransactionFee", totalTrxFee);
-				//OUT_CSV_FILE.println("SCALE:"+SCALE+" SHAPE:"+SHAPE+" POOLSIZE:"+TrxPool.size()+","+totalTrxFee);
+				OUT_CSV_FILE.println("SCALE:"+SCALE+" SHAPE:"+SHAPE+" POOLSIZE:"+TrxPool.size()+","+totalTrxFee);
 				if(MINBLOCKTRXFEE > totalTrxFee) {
 					MINBLOCKTRXFEE = totalTrxFee;
 				}
@@ -204,7 +215,7 @@ public class MiningTask extends AbstractMintingTask {
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			}*/
 		}
-
+		//TRXNUMS = TrxPool.size();
 		return selectedTrxList;
 	}
 }
