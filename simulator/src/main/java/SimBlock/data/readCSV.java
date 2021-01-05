@@ -21,7 +21,7 @@ public class readCSV {
                 count = count + 1;
                 //返回一个","分隔的迭代器
                 //这种方法不是很好，建议还是使用示例一中的方法
-                //if(count >= TRXNUMS && Trxlist.size() < TRXNUMS + recordsnum) {
+                //取mempool中大于等于TRXNUMS（当前已取到的记录编号）的记录
                 if(count >= TRXNUMS && Trxlist.size() <= 16000) {
                     StringTokenizer st = new StringTokenizer(line, ",");
                     Map<String, Object> transaction = new HashMap<String, Object>();
@@ -35,6 +35,7 @@ public class readCSV {
                         transaction.put("Volume_(BTC)", st.nextToken().trim());
                         transaction.put("Volume_(Currency)", st.nextToken().trim());
                         transaction.put("Weighted_Price", st.nextToken().trim());
+                        transaction.put("DecayFactor","1");
                         //使用ArrayList接收数据
                         Trxlist.add(transaction);
                     }

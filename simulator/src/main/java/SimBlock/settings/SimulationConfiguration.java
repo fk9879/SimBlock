@@ -47,7 +47,7 @@ public class SimulationConfiguration {
 	//交易手续费0.2%
 	public static final double TRANSACTIONFEEPCT = 0.002;
 	// Log Normal Distribution Scale
-	public static Double SCALE = 10.0;
+	public static Double SCALE = 6.8;
 	// Log Normal Distribution Shape
 	public static Double SHAPE = 1.0;
 	// Maximum Transaction fee for one block
@@ -60,4 +60,6 @@ public class SimulationConfiguration {
 	public static int TRXNUMS = 0;
 	// Remaining Transactions
 	public static Double REMAINTRX = 0.0;
+	// Decay Percentage
+	public static Double DECAYPRECNET = 0.8;
 }
