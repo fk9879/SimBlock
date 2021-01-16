@@ -97,20 +97,23 @@ public class MiningTask extends AbstractMintingTask {
 			TimeSenProcess(GolbalTrxPool.TrxPool);
 		}
 
+		int trxNumOneBlock = 0;
+
 		while (count > 0) {
-			//transaction = getTrxByMaxFee(decayInd,TrxPool);
-			transaction = getTrxByOrder(spaceInd,decayInd,TrxPool,count);
+			transaction = getTrxByMaxFee(spaceInd,decayInd,TrxPool,count);
+			//transaction = getTrxByOrder(spaceInd,decayInd,TrxPool,count);
+			//每挑选一笔交易就把区块中的交易数量加一
+			trxNumOneBlock = trxNumOneBlock + 1;
 			totalTrxFee = totalTrxFee + Double.parseDouble(transaction.get("TransactionFee").toString());
 			//將交易加入輸出List
 			selectedTrxList.add(transaction);
 			//減去這筆交易佔用的空間
 			count = count - Integer.parseInt(transaction.get("SpaceFactor").toString());
-			//TRXNUMS = TRXNUMS + 1;
 			//如果是最后一笔纳入区块的交易，则记录总交易手续费，否则每笔交易的交易手续费设置为0
 			//如果区块被填满，或者已经没有可以放入一个区块的交易，或者所有的交易都已经被放入区块
 			if(count == 0 || TrxPool.size() ==0 || Boolean.parseBoolean(transaction.get("LastTrxInd").toString())) {
 				transaction.put("TotalTransactionFee", totalTrxFee);
-				OUT_CSV_FILE.println("SCALE:"+SCALE+" SHAPE:"+SHAPE+" POOLSIZE:"+TrxPool.size()+","+totalTrxFee+","+TRXNUMS);
+				OUT_CSV_FILE.println("SCALE:"+SCALE+" SHAPE:"+SHAPE+" POOLSIZE:"+TrxPool.size()+","+totalTrxFee+","+trxNumOneBlock);
 				if(MINBLOCKTRXFEE > totalTrxFee) {
 					MINBLOCKTRXFEE = totalTrxFee;
 				}
@@ -124,7 +127,7 @@ public class MiningTask extends AbstractMintingTask {
 			}
 
 			//CDF曲线画图
-			try {
+			/*try {
 				PrintWriter CDF_FILE = new PrintWriter(new BufferedWriter(new FileWriter(new File(Block.class.getClassLoader().getResource("simulator.conf").toURI().resolve("./output/CDFoutput.csv")))));
 				Scanner scanner = new Scanner(System.in);
 				System.out.println("开始....输入N");
@@ -136,7 +139,7 @@ public class MiningTask extends AbstractMintingTask {
 
 					XYSeries series = new XYSeries("xySeries");
 					for (int x = 1; x <= 5000; x++) {
-						double y = Math.ceil(tmp.cumulativeProbability(x) * 20);
+						double y = Math.ceil(tmp.cumulativeProbability(x) * 80);
 						series.add(x, y);
 						CDF_FILE.println(x + "," + y);
 						CDF_FILE.flush();
@@ -159,7 +162,7 @@ public class MiningTask extends AbstractMintingTask {
 					frame.setVisible(true);
 					frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				}
-			}catch (Exception e){}
+			}catch (Exception e){}*/
 		}
 		return selectedTrxList;
 	}
@@ -201,8 +204,10 @@ public class MiningTask extends AbstractMintingTask {
 				//如果當前這筆交易不夠放到當前區塊中，選擇下一筆交易
 				if (spaceFactor > count) {
 					i = i + 1;
+					//如果已经是mempool中最后一笔，则返回
 					if(i >= TrxPool.size()) {
 						transaction.put("LastTrxInd", true);
+						break;
 					}
 					continue;
 				} else {
@@ -218,27 +223,68 @@ public class MiningTask extends AbstractMintingTask {
 		return transaction;
 	}
 
-	private static Map<String, Object> getTrxByMaxFee(Boolean decayInd,ArrayList<Map<String, Object>> TrxPool){
+	private static Map<String, Object> getTrxByMaxFee(Boolean spaceInd,Boolean decayInd,ArrayList<Map<String, Object>> TrxPool,int count){
+		//初始化CDF空间占用参数为1
+		int spaceFactor = 1;
+		//初始化衰减变量为1
+		Double decayFactor = 1.0;
+
+		//根據交易手續費計算應該佔用的空間係數
+		LogNormalDistribution LND = new LogNormalDistribution(SCALE, SHAPE);
 		Map<String, Object>  maxNum = TrxPool.get(0);
-		Double maxFee = 0.0;
-		if(decayInd) {
-			maxFee = Double.parseDouble(maxNum.get("DecayFee").toString());
-		}else{
-			maxFee = Double.parseDouble(maxNum.get("Volume_(Currency)").toString());
+		//如果有衰减则计算衰减变量
+		if (decayInd) {
+			decayFactor = Double.parseDouble(maxNum.get("DecayFactor").toString());
 		}
+		Double maxFee = Double.parseDouble(maxNum.get("Volume_(Currency)").toString()) * decayFactor * TRANSACTIONFEEPCT;
+		maxNum.put("TransactionFee", maxFee);
+		maxNum.put("SpaceFactor", new Double(Math.ceil(LND.cumulativeProbability(maxFee) * 80)).intValue());
+		maxNum.put("LastTrxInd", false);
+
 		int num = 0;
 		Double currFee = 0.0;
 		for (int i = 0; i < TrxPool.size(); i++) {
 			//如果是手续费衰减，则比较衰减后的手续费值
-			if(decayInd){
-				currFee = Double.parseDouble(TrxPool.get(i).get("DecayFee").toString());
-			}else{
-				currFee = Double.parseDouble(TrxPool.get(i).get("Volume_(Currency)").toString());
+			decayFactor = 1.0;
+			if (decayInd) {
+				decayFactor = Double.parseDouble(TrxPool.get(i).get("DecayFactor").toString());
 			}
+			currFee = Double.parseDouble(TrxPool.get(i).get("Volume_(Currency)").toString()) * decayFactor * TRANSACTIONFEEPCT;
+
 			if(maxFee < currFee) {
-				maxFee = currFee;
-				maxNum = TrxPool.get(i);
-				num = i;
+				if(!spaceInd){
+					maxFee = currFee;
+					maxNum = TrxPool.get(i);
+					num = i;
+					i = i + 1;
+				}else {
+					//根據Cumulative Probability計算出來的結果向上取整，即0.1=1
+					spaceFactor = new Double(Math.ceil(LND.cumulativeProbability(currFee) * 80)).intValue();
+					//当CDF算出来占用空间是0的时候至少要占用一个存储空间
+					if (spaceFactor == 0)
+						spaceFactor = 1;
+					//如果當前這筆交易不夠放到當前區塊中，選擇下一筆交易
+					if (spaceFactor > count) {
+						i = i + 1;
+						if (i >= TrxPool.size()) {
+							maxNum.put("TransactionFee", maxFee);
+							maxNum.put("SpaceFactor", spaceFactor);
+							maxNum.put("LastTrxInd", true);
+							break;
+						}
+						continue;
+					} else {
+						//如果当前这笔交易可以放到当前区块中，也要选择下一笔交易，看是否还有交易手续费更多并且可被容纳到当前区块的交易
+						maxFee = currFee;
+						maxNum = TrxPool.get(i);
+						maxNum.put("TransactionFee", maxFee);
+						maxNum.put("SpaceFactor", spaceFactor);
+						maxNum.put("LastTrxInd", false);
+						num = i;
+						i = i + 1;
+						continue;
+					}
+				}
 			}
 		}
 		TrxPool.remove(num);
